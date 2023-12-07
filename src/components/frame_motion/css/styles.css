@@ -6,7 +6,16 @@
 .motion-teste {
     background: white;
     border-radius: 30px;
+    /*Dimensões*/
     width: 150px;
     height: 150px;  
+    /*Content*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*Text*/
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
   }
   
