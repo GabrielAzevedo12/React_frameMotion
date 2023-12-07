@@ -7,8 +7,8 @@
     background: white;
     border-radius: 30px;
     /*Dimensões*/
-    width: 150px;
-    height: 150px;  
+    width: 500px;
+    height: 500px;  
     /*Content*/
     display: flex;
     justify-content: center;
@@ -19,3 +19,19 @@
     font-weight: 500;
   }
   
+  .motion-teste div,
+  .motion-teste li {
+    background: black;
+    border-radius: 30px;
+    /*Dimensões*/
+    width: 120px;
+    height: 120px;  
+    /*Content*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    /*Text*/
+    color: white;
+    font-size: 1.5rem;
+  }

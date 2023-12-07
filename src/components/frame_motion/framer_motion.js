@@ -1,13 +1,47 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform} from "framer-motion";
 import "./css/styles.css";
 
-export default function FramerMotion() {
-  return (
-    <motion.div drag whileHover={{ scale: 2.1 }} whileTap={{ scale: 0.8 }} className="motion-teste" >
-      Drag me
+const list = { hidden: { opacity: 0 } }
+const item = { hidden: { x: -10, opacity: 0 } }
+/*
+drag="x" 
+    whileHover={{ scale: 2.1 }}
+    whileTap={{ scale: 0.8 }} 
+
+    <motion.div 
+    whileHover={{ 
+      scale: 1.2,
+      rotate: 360
+     }}
+    whileTap={{ scale: 1.1 }}
+    drag
+    dragConstraints={{ left: -100, top: -100, bottom: 100, right: 0 }}
+    className="motion-teste">
+      <div>Drag me</div>
     </motion.div>
-  );
+
+    <motion.ul animate="hidden" variants={list} className="motion-teste">
+      <motion.li variants={item} />
+      <motion.li variants={item} />
+      <motion.li variants={item} />
+    </motion.ul>
+
+    <motion.div
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    className="motion-teste">
+       <motion.div variants={item} />
+       <motion.div variants={item} />
+       <motion.div variants={item} />
+    </motion.div>
+*/
+export default function FramerMotion() {
+  const x = useMotionValue(0)
+  const width = useTransform(x, [-100, 0, 100], [100, 50, 100])
+  const height = useTransform(x, [-100, 0, 100], [100, 50, 100])
+
+  return <motion.div drag style={{ x, width, height }} className="motion-teste"/>
 }
 
 /*

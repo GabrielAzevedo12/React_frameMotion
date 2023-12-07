@@ -1,10 +1,13 @@
 .App {
   text-align: center;
   width: 100vw;
-  height: 100vh;
+  height: 150vh;
   background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.App div {
+  margin-right: 10px;
+}
