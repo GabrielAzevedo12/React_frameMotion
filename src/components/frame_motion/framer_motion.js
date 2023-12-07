@@ -4,7 +4,7 @@ import "./css/styles.css";
 
 export default function FramerMotion() {
   return (
-    <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} className="motion-teste" />
+    <motion.div drag whileHover={{ scale: 2.1 }} whileTap={{ scale: 0.8 }} className="motion-teste" />
   );
 }
 
