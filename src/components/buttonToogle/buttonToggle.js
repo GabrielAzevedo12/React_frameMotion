@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, useMotionValue, useTransform} from "framer-motion";
-import "./css/styles.css";
+import "./css/buttonToggle.css";
 
 const 
 hidden ={ 
