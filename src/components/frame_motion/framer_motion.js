@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion, useMotionValue, useTransform} from "framer-motion";
 import "./css/styles.css";
 
@@ -37,12 +37,65 @@ drag="x"
     </motion.div>
 */
 export default function FramerMotion(props) {
+  const [hidden, setHidden] = useState(
+    { 
+      scale: 0,
+      y: -100,
+      x: -100
+     }
+     )
+  const [visible, setVisible] = useState(
+    { 
+      scale: 1,
+      y: 0,
+      x: 0
+     }
+     )
+  const [display, setDisplay] = useState(false);
+
   const x = useMotionValue(0)
   const y = useMotionValue(0)
-  const width = useTransform(x, [-100, 0, 100], [500, 10, 500])
-  const height = useTransform(y, [-100, 0, 100], [500, 10, 500])
+  const width = useTransform(x, [-100, 0, 100], [600, 500, 600])
+  const height = useTransform(y, [-100, 0, 100], [600, 500, 600])
 
-  return <motion.div drag style={{ x, y, width, height }} className={props.className || ""}/>
+  return (
+  <motion.div 
+  drag
+  style={{ x, y, width, height }}
+  dragConstraints={{ 
+    left: 0,
+    top: 0,
+    bottom: 0,
+    right: 0 }}
+  whileInView={{ 
+    scale: [0, 0, 1, 1],
+    borderRadius: ["0%", "50%", "50%", "10%"],  
+    rotate: [360, 360, 0, 0],
+    x: [-700, -700, 100, 0],
+    opacity: [0, 0, 1, 1] }}
+  transition={{ duration: 1 }}
+  viewport={{ once: true }}
+  className={props.className || ""}>
+
+    <motion.div 
+    whileHover={{ 
+      scale: 1.2,
+      rotate: 360
+     }}
+    whileTap={{ scale: 1.1 }}
+    drag
+    className="bt"
+    onClick={() => display ? setDisplay(!display) : setDisplay(!display)}>
+      Button
+    </motion.div>
+
+    <motion.div 
+    animate={ display ? hidden : visible } >
+      <div>Drag me</div>
+    </motion.div>
+
+  </motion.div>
+  )
 }
 
 /*
@@ -54,4 +107,46 @@ export default function FramerMotion(props) {
     }}>
       <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} />
     </div>
+
+<motion.div 
+  drag
+  style={{ x, y, width, height }}
+  dragConstraints={{ 
+    left: 0,
+    top: 0,
+    bottom: 0,
+    right: 0 }}
+  whileInView={{ 
+    scale: [0, 0, 1, 1],
+    borderRadius: ["0%", "50%", "50%", "10%"],  
+    rotate: [360, 360, 0, 0],
+    x: [-700, -700, 100, 0],
+    opacity: [0, 0, 1, 1] }}
+  transition={{ duration: 1 }}
+  viewport={{ once: true }}
+  className={props.className || ""}>
+
+    <motion.div 
+    whileHover={{ 
+      scale: 1.2,
+      rotate: 360
+     }}
+    whileTap={{ scale: 1.1 }}
+    drag
+    className="bt"
+    onClick={() => display ? setDisplay(!display) : setDisplay(!display)}>
+      Button
+    </motion.div>
+
+    <motion.div 
+    whileHover={{ 
+      scale: 1.2,
+      rotate: 360
+     }}
+    whileTap={{ scale: 1.1 }}
+    drag>
+      <div>Drag me</div>
+    </motion.div>
+
+  </motion.div>    
 */

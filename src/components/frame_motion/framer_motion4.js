@@ -13,11 +13,12 @@ export const FramerMotion4 = (props) => {
     const transition_duration = 2;
     return (
       <motion.div
-      animate={{
+      whileInView={{
         scale: [1, 2, 2, 1, 1],
         rotate: [0, 0, 270, 270, 0],
         borderRadius: ["20%", "20%", "50%", "50%", "20%"],
       }}
+      viewport={{ once: true }}
       transition={{ duration: transition_duration }}
       whileHover={{ 
         scale: 1.5,
@@ -27,11 +28,12 @@ export const FramerMotion4 = (props) => {
       className={props.className || ""}
     >
       <motion.div
-        animate={{
+        whileInView={{
           scale: [1, 2, 2, 1, 1],
           rotate: [0, 0, 270, 270, 0],
           borderRadius: ["20%", "20%", "50%", "50%", "20%"],
         }}
+        viewport={{ once: true }}
         transition={{ duration: transition_duration }}
         whileHover={{ 
           scale: 1.5,
@@ -44,11 +46,12 @@ export const FramerMotion4 = (props) => {
           }
         }>
           <motion.div
-        animate={{
+        whileInView={{
           scale: [1, 2, 2, 1, 1],
           rotate: [0, 0, 270, 270, 0],
           borderRadius: ["20%", "20%", "50%", "50%", "20%"],
         }}
+        viewport={{ once: true }}
         transition={{ duration: transition_duration }}
         whileHover={{ 
           scale: 1.5,
@@ -69,7 +72,8 @@ export const FramerMotion4 = (props) => {
   /*
   <motion.div
         initial={{ opacity: 0, scale: 0.5, x: -300  }}
-        animate={{ opacity: 1, scale: 1, x: 0 }}
+        whileInView={{ opacity: 1, scale: 1, x: 0 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.5 }}
         className={props.className || ""}
       />
