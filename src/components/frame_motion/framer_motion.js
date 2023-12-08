@@ -36,13 +36,13 @@ drag="x"
        <motion.div variants={item} />
     </motion.div>
 */
-export default function FramerMotion() {
+export default function FramerMotion(props) {
   const x = useMotionValue(0)
   const y = useMotionValue(0)
   const width = useTransform(x, [-100, 0, 100], [500, 10, 500])
   const height = useTransform(y, [-100, 0, 100], [500, 10, 500])
 
-  return <motion.div drag style={{ x, y, width, height }} className="motion-teste"/>
+  return <motion.div drag style={{ x, y, width, height }} className={props.className || ""}/>
 }
 
 /*
