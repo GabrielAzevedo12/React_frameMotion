@@ -1,4 +1,4 @@
-.ButtonToogleContainer {
+#ButtonToogleContainer {
     background: white;
     border-radius: 30px;
     /*Dimensões*/
@@ -16,7 +16,7 @@
     font-weight: 500;
   }
   
-  .ButtonToogleContainer div {
+  #ButtonToogleContainer div {
     background: black;
     border-radius: 30px;
     /*Dimensões*/
@@ -37,7 +37,7 @@
     font-size: 1.5rem;
   }
 
-  .ButtonToogleContainer div#bt {
+  #ButtonToogleContainer div#bt {
     /*background: linear-gradient(rgb(169, 14, 184),rgb(64, 40, 196));*/
     background: rgb(42, 44, 51);
     /*Dimensões*/

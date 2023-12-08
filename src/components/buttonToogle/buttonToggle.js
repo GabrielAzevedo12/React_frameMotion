@@ -61,11 +61,8 @@ export default function ButtonToggle(props) {
   return (
   <motion.div 
 
-
   drag
-
   style={{ x, y, width, height }}
-
   dragConstraints={{ 
     left: 0,
     top: 0,
@@ -80,9 +77,8 @@ export default function ButtonToggle(props) {
     opacity: [0, 0, 1, 1] }}
 
   transition={{ duration: 1 }}
-
   viewport={{ once: true }}
-
+  id="ButtonToogleContainer"
   className={props.className || ""}>
 
     <motion.div 
