@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { motion, useMotionValue, useTransform} from "framer-motion";
 import "./css/buttonToggle.css";
+import { AiOutlineDown } from "react-icons/ai";
+import { AiOutlineUp } from "react-icons/ai";
 
 const 
 hidden ={ 
@@ -21,6 +23,12 @@ snow = {
 dark = {
     backgroundColor: "black",
     color: "rgb(88, 79, 79)"
+},
+rotate0 = {
+    rotate: 0
+},
+rotate360 = {
+    rotate: 180
 };   
 
 /*
@@ -60,6 +68,7 @@ drag="x"
 */
 export default function ButtonToggle(props) {
   const [animateMotionTesteDiv, setAnimateMotionTesteDiv] = useState(hidden);
+  const [animateMotionTesteDivBt, setAnimateMotionTesteDivBt] = useState(rotate0);
   const [styleBt, setStyleBt] = useState(dark);
 
   const x = useMotionValue(0)
@@ -94,7 +103,8 @@ export default function ButtonToggle(props) {
     id="bt"
     initial={{
       borderRadius: 30,
-      opacity: animateMotionTesteDiv === visible ? 1 : 0.7
+      opacity: animateMotionTesteDiv === visible ? 1 : 0.7,
+      scale: 1.2,
       }}
     whileTap={{ scale: 1.1 }}
     whileHover={{ 
@@ -108,9 +118,12 @@ export default function ButtonToggle(props) {
         setAnimateMotionTesteDiv(hidden) : setAnimateMotionTesteDiv(visible)
         animateMotionTesteDiv === visible ?
         setStyleBt(dark) : setStyleBt(snow)
+        animateMotionTesteDiv === visible ?
+        setAnimateMotionTesteDivBt(rotate360) : setAnimateMotionTesteDivBt(rotate0)
     } 
-        }>
-      Button
+        }
+    animate={animateMotionTesteDivBt}>
+           <AiOutlineUp />
     </motion.div>
 
     <motion.div 
@@ -123,6 +136,9 @@ export default function ButtonToggle(props) {
 }
 
 /*
+ {
+            animateMotionTesteDiv === visible ?
+            <AiOutlineUp /> : <AiOutlineDown />}
 
 initial={{
       opacity: 0.7

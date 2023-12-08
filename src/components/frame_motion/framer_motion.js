@@ -87,7 +87,7 @@ export default function FramerMotion(props) {
 
     <motion.div 
     initial={{
-      borderRadius: 10
+      borderRadius: 10,
       }}
     whileTap={{ scale: 1.1 }}
     whileHover={{ 
