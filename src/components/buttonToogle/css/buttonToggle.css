@@ -1,0 +1,59 @@
+.ButtonToogleContainer {
+    background: white;
+    border-radius: 30px;
+    /*Dimensões*/
+    width: 500px;
+    height: 500px;  
+    margin-top: 200px;
+    /*Content*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*Text*/
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  
+  .ButtonToogleContainer div {
+    background: black;
+    border-radius: 30px;
+    /*Dimensões*/
+    --ButtonToogleContainer-div-width: 250px;
+    --ButtonToogleContainer-div-height: 250px;
+    width: var(--ButtonToogleContainer-div-width);
+    height: var(--ButtonToogleContainer-div-height);  
+    /*Content*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*margin: 10px;*/
+    /*Posiçao*/
+    position: relative;
+    top: calc( var(--ButtonToogleContainer-div-bt-height) - 2px );
+    /*Text*/
+    color: rgb(88, 79, 79);
+    font-size: 1.5rem;
+  }
+
+  .ButtonToogleContainer div#bt {
+    /*background: linear-gradient(rgb(169, 14, 184),rgb(64, 40, 196));*/
+    background: rgb(42, 44, 51);
+    /*Dimensões*/
+    --ButtonToogleContainer-div-bt-width: 100px;
+    --ButtonToogleContainer-div-bt-height: 50px;
+    width: var(--ButtonToogleContainer-div-bt-width);
+    height: var(--ButtonToogleContainer-div-bt-height);  
+    /*Content*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    /*Posiçao*/
+    position: relative;
+    left: calc( var(--ButtonToogleContainer-div-bt-width)*0.5 - var(--ButtonToogleContainer-div-width)*0.5 + -10px );
+    /*Text*/
+    color: rgb(138, 128, 128);
+    font-size: 1.2rem;
+  }
