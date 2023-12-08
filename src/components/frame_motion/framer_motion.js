@@ -2,9 +2,23 @@ import React, { useState } from "react";
 import { motion, useMotionValue, useTransform} from "framer-motion";
 import "./css/styles.css";
 
+const 
+hidden ={ 
+    scale: 0,
+    y: -100,
+    x: -100
+   },
+
+visible = { 
+    scale: 1,
+    y: 0,
+    x: 0
+   }
+
+/*
 const list = { hidden: { opacity: 0 } }
 const item = { hidden: { x: -10, opacity: 0 } }
-/*
+
 drag="x" 
     whileHover={{ scale: 2.1 }}
     whileTap={{ scale: 0.8 }} 
@@ -37,21 +51,7 @@ drag="x"
     </motion.div>
 */
 export default function FramerMotion(props) {
-  const [hidden, setHidden] = useState(
-    { 
-      scale: 0,
-      y: -100,
-      x: -100
-     }
-     )
-  const [visible, setVisible] = useState(
-    { 
-      scale: 1,
-      y: 0,
-      x: 0
-     }
-     )
-  const [display, setDisplay] = useState(false);
+  const [animateMotionTesteDiv, setAnimateMotionTesteDiv] = useState(hidden);
 
   const x = useMotionValue(0)
   const y = useMotionValue(0)
@@ -60,37 +60,50 @@ export default function FramerMotion(props) {
 
   return (
   <motion.div 
+
+
   drag
+
   style={{ x, y, width, height }}
+
   dragConstraints={{ 
     left: 0,
     top: 0,
     bottom: 0,
     right: 0 }}
+
   whileInView={{ 
     scale: [0, 0, 1, 1],
     borderRadius: ["0%", "50%", "50%", "10%"],  
     rotate: [360, 360, 0, 0],
     x: [-700, -700, 100, 0],
     opacity: [0, 0, 1, 1] }}
+
   transition={{ duration: 1 }}
+
   viewport={{ once: true }}
+
   className={props.className || ""}>
 
     <motion.div 
+    initial={{
+      opacity: 0.7
+    }
+    }
     whileHover={{ 
       scale: 1.2,
-      rotate: 360
+      rotate: 360,
+      opacity: 1
      }}
     whileTap={{ scale: 1.1 }}
     drag
     className="bt"
-    onClick={() => display ? setDisplay(!display) : setDisplay(!display)}>
+    onClick={() => animateMotionTesteDiv === visible ? setAnimateMotionTesteDiv(hidden) : setAnimateMotionTesteDiv(visible) }>
       Button
     </motion.div>
 
     <motion.div 
-    animate={ display ? hidden : visible } >
+    animate={animateMotionTesteDiv} >
       <div>Drag me</div>
     </motion.div>
 
