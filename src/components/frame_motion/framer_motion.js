@@ -38,10 +38,11 @@ drag="x"
 */
 export default function FramerMotion() {
   const x = useMotionValue(0)
-  const width = useTransform(x, [-100, 0, 100], [100, 50, 100])
-  const height = useTransform(x, [-100, 0, 100], [100, 50, 100])
+  const y = useMotionValue(0)
+  const width = useTransform(x, [-100, 0, 100], [500, 10, 500])
+  const height = useTransform(y, [-100, 0, 100], [500, 10, 500])
 
-  return <motion.div drag style={{ x, width, height }} className="motion-teste"/>
+  return <motion.div drag style={{ x, y, width, height }} className="motion-teste"/>
 }
 
 /*
