@@ -1,9 +1,9 @@
 #ButtonToogleContainer {
     background: white;
     border-radius: 30px;
-    /*Dimensões*/
+    /*Dimensões
     width: 500px;
-    height: 500px;  
+    height: 500px;  */
     margin-top: 200px;
     /*Content*/
     display: flex;
@@ -31,7 +31,7 @@
     /*margin: 10px;*/
     /*Posiçao*/
     position: relative;
-    top: calc( var(--ButtonToogleContainer-div-bt-height) - 2px );
+    /*top: calc( var(--ButtonToogleContainer-div-bt-height) - 2px );*/
     /*Text*/
     color: rgb(88, 79, 79);
     font-size: 1.5rem;
@@ -53,7 +53,9 @@
     /*Posiçao*/
     position: relative;
     left: calc( var(--ButtonToogleContainer-div-bt-width)*0.5 - var(--ButtonToogleContainer-div-width)*0.5 + -10px );
+    top: calc( -2px + var(--ButtonToogleContainer-div-bt-height)*0.5 );
     /*Text*/
     color: rgb(138, 128, 128);
     font-size: 1.2rem;
+
   }

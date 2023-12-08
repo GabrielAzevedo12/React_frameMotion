@@ -13,7 +13,15 @@ visible = {
     scale: 1,
     y: 0,
     x: 0
-   }
+   },
+snow = {
+    backgroundColor: "white",
+    color: "rgb(88, 79, 79)"
+},
+dark = {
+    backgroundColor: "black",
+    color: "rgb(88, 79, 79)"
+};   
 
 /*
 const list = { hidden: { opacity: 0 } }
@@ -52,17 +60,20 @@ drag="x"
 */
 export default function ButtonToggle(props) {
   const [animateMotionTesteDiv, setAnimateMotionTesteDiv] = useState(hidden);
+  const [styleBt, setStyleBt] = useState(dark);
 
   const x = useMotionValue(0)
   const y = useMotionValue(0)
-  const width = useTransform(x, [-100, 0, 100], [600, 500, 600])
-  const height = useTransform(y, [-100, 0, 100], [600, 500, 600])
+  const width = useTransform(x, [-100, 0, 100], [600, 0, 600])
+  const height = useTransform(y, [-100, 0, 100], [600, 0, 600])
 
   return (
   <motion.div 
-
-  drag
+  id="ButtonToogleContainer"
+  className={props.className || ""}
   style={{ x, y, width, height }}
+  drag
+
   dragConstraints={{ 
     left: 0,
     top: 0,
@@ -77,23 +88,28 @@ export default function ButtonToggle(props) {
     opacity: [0, 0, 1, 1] }}
 
   transition={{ duration: 1 }}
-  viewport={{ once: true }}
-  id="ButtonToogleContainer"
-  className={props.className || ""}>
+  viewport={{ once: true }}>
 
     <motion.div 
+    id="bt"
     initial={{
-      borderRadius: 10
+      borderRadius: 30,
+      opacity: animateMotionTesteDiv === visible ? 1 : 0.7
       }}
     whileTap={{ scale: 1.1 }}
     whileHover={{ 
-      scale: 1.2,
-      borderRadius: 30,
-      background: "white"
+      scale: 1.5,
+      borderRadius: 50,
+      opacity: 1
      }}
-    drag
-    id="bt"
-    onClick={() => animateMotionTesteDiv === visible ? setAnimateMotionTesteDiv(hidden) : setAnimateMotionTesteDiv(visible) }>
+    style={styleBt}
+    onClick={() => {
+        animateMotionTesteDiv === visible ?
+        setAnimateMotionTesteDiv(hidden) : setAnimateMotionTesteDiv(visible)
+        animateMotionTesteDiv === visible ?
+        setStyleBt(dark) : setStyleBt(snow)
+    } 
+        }>
       Button
     </motion.div>
 
