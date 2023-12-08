@@ -87,15 +87,14 @@ export default function FramerMotion(props) {
 
     <motion.div 
     initial={{
-      opacity: 0.7
-    }
-    }
+      borderRadius: 10
+      }}
+    whileTap={{ scale: 1.1 }}
     whileHover={{ 
       scale: 1.2,
-      rotate: 360,
-      opacity: 1
+      borderRadius: 30,
+      background: "white"
      }}
-    whileTap={{ scale: 1.1 }}
     drag
     className="bt"
     onClick={() => animateMotionTesteDiv === visible ? setAnimateMotionTesteDiv(hidden) : setAnimateMotionTesteDiv(visible) }>
@@ -112,6 +111,17 @@ export default function FramerMotion(props) {
 }
 
 /*
+
+initial={{
+      opacity: 0.7
+    }
+    }
+    whileHover={{ 
+      scale: 1.2,
+      rotate: 360,
+      opacity: 1
+     }}
+
 <div className="my-container" style={{
         height: "50vh",
         width: "50vw",
