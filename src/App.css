@@ -2,10 +2,11 @@
   text-align: center;
   width: 100vw;
   min-height: 100vh;
-  background-color: white;
+  background: radial-gradient(rgb(175, 29, 155) -150%,black);
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-direction: row-reverse;
   /*
   flex-direction: column;
   justify-content: center;

@@ -84,7 +84,7 @@ export default function ButtonToggle(props) {
   drag
 
   dragConstraints={{ 
-    left: 0,
+    left: 50,
     top: 0,
     bottom: 0,
     right: 0 }}

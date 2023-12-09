@@ -4,7 +4,7 @@
     align-items: center;
   }
 .motion-teste {
-    background: white;
+    background: radial-gradient(rgb(175, 29, 85) -80%,black);
     border-radius: 30px;
     /*Dimensões*/
     width: 500px;
