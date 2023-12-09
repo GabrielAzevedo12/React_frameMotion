@@ -7,9 +7,10 @@
     background: radial-gradient(rgb(175, 29, 85) -80%,black);
     border-radius: 30px;
     /*Dimensões*/
-    width: 500px;
+    min-width: 90vw;
     height: 500px;  
     margin-top: 200px;
+    margin-left: 10px;
     /*Content*/
     display: flex;
     flex-direction: column;
@@ -43,9 +44,11 @@
     font-size: 1.5rem;
   }
 
-  .motion-teste div.bt {
+  .motion-teste div.bt,
+  .bt {
     /*background: linear-gradient(rgb(169, 14, 184),rgb(64, 40, 196));*/
     background: rgb(48, 59, 99);
+    border-radius: 30px;
     /*Dimensões*/
     --motion-teste-div-bt-width: 100px;
     --motion-teste-div-bt-height: 50px;
@@ -55,11 +58,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2;
     /*Posiçao*/
     position: relative;
     left: calc( var(--motion-teste-div-bt-width)*0.5 - var(--motion-teste-div-width)*0.5 + -10px );
     /*Text*/
     color: rgb(138, 128, 128);
     font-size: 1.2rem;
+  }
+  .bt:hover,
+  .motion-teste div.bt:hover {
+    z-index: 2;
+  }
+  .div_bt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
