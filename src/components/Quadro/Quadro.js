@@ -15,7 +15,17 @@ export const Quadro = (props) => {
             animate={{
                 x: props.x || 0
             }}
-
+            initial={{ 
+                opacity: 0 ,
+                scale: 0 
+            }}
+            whileInView={{ 
+                opacity: 1 ,
+                scale: 1 
+            }}
+            whileHover={{ 
+                scale: 1.2
+               }}
             style={ props.style || {
                 minWidth: "95vw",
                 height: "500px",  
