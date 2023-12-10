@@ -33,6 +33,15 @@ export const FramerMotion5 = (props) => {
             <Quadro
             className="flex-column center text_center style_template_3"
             x={const_deslocamento}/>
+            <Quadro
+            className="flex-column center text_center style_template_3"
+            x={const_deslocamento}/>
+            <Quadro
+            className="flex-column center text_center style_template_3"
+            x={const_deslocamento}/>
+            <Quadro
+            className="flex-column center text_center style_template_3"
+            x={const_deslocamento}/>
             <div 
             className="div_bt flex center fixed"
             style={{
@@ -42,7 +51,7 @@ export const FramerMotion5 = (props) => {
             <ButtonDinamico1 
             onClick = {
                 (e) => {
-                    setConst_deslocamento(const_deslocamento - 1500);
+                    setConst_deslocamento(const_deslocamento - 1540);
                     console.log(const_deslocamento, "left")
                 }
             }
@@ -52,7 +61,7 @@ export const FramerMotion5 = (props) => {
             <ButtonDinamico1
             onClick = {
                 (e) => {
-                        setConst_deslocamento(const_deslocamento + 1500);
+                        setConst_deslocamento(const_deslocamento + 1540);
                         console.log(const_deslocamento, "right")
                     }
                 } >
