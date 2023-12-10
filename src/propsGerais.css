@@ -1,0 +1,155 @@
+.grid-templateLayout-1 {
+    display: grid;
+    grid-template-areas:
+    'GridTemplateLayout1_item1 GridTemplateLayout1_item1 GridTemplateLayout1_item1 GridTemplateLayout1_item1 GridTemplateLayout1_item1 GridTemplateLayout1_item1'
+    'GridTemplateLayout1_item3 GridTemplateLayout1_item2 GridTemplateLayout1_item2 GridTemplateLayout1_item2 GridTemplateLayout1_item2 GridTemplateLayout1_item2'
+    'GridTemplateLayout1_item3 GridTemplateLayout1_item4 GridTemplateLayout1_item4 GridTemplateLayout1_item4 GridTemplateLayout1_item4 GridTemplateLayout1_item4';
+    gap: 10px;
+    padding: 10px;
+  
+  }
+  
+  .grid-templateLayout-2 {
+    display: grid;
+    grid-template-areas:
+    'GridTemplateLayout2_item1 GridTemplateLayout2_item1 GridTemplateLayout2_item1 GridTemplateLayout2_item1 GridTemplateLayout2_item1 GridTemplateLayout2_item1'
+    'GridTemplateLayout2_item2 GridTemplateLayout2_item2 GridTemplateLayout2_item2 GridTemplateLayout2_item2 GridTemplateLayout3_item2'
+    'GridTemplateLayout2_item4 GridTemplateLayout2_item4 GridTemplateLayout2_item4 GridTemplateLayout2_item4 GridTemplateLayout3_item2';
+    gap: 10px;
+    padding: 10px;
+  
+  }
+  
+  .grid-templateLayout-3 {
+    display: grid;
+    grid-template-areas:
+    'GridTemplateLayout3_item1 GridTemplateLayout3_item1 GridTemplateLayout3_item1 GridTemplateLayout3_item1 GridTemplateLayout3_item1 GridTemplateLayout3_item1'
+    'GridTemplateLayout3_item3 GridTemplateLayout3_item3 GridTemplateLayout3_item3 GridTemplateLayout3_item3 GridTemplateLayout3_item3'
+    'GridTemplateLayout3_item2 GridTemplateLayout3_item2 GridTemplateLayout3_item2 GridTemplateLayout3_item2 GridTemplateLayout3_item2'
+    'GridTemplateLayout3_item4 GridTemplateLayout3_item4 GridTemplateLayout3_item4 GridTemplateLayout3_item4 GridTemplateLayout3_item4';
+    gap: 10px;
+    padding: 10px;
+  
+  }
+  
+  .grid-templateLayout-4 {
+    display: grid;
+    grid-template-areas:
+    'GridTemplateLayout4_item1 GridTemplateLayout4_item1 GridTemplateLayout4_item1 GridTemplateLayout4_item1 GridTemplateLayout4_item1 GridTemplateLayout4_item1'
+    'GridTemplateLayout4_item2 GridTemplateLayout4_item2 GridTemplateLayout4_item2 GridTemplateLayout4_item2 GridTemplateLayout4_item2'
+    'GridTemplateLayout4_item3 GridTemplateLayout4_item3 GridTemplateLayout4_item3 GridTemplateLayout4_item3 GridTemplateLayout4_item3';
+    gap: 10px;
+    padding: 10px;
+  
+  }
+  
+.template-column {
+    display: flex;
+    flex-direction: column;
+}
+  
+.displayTrue {
+  
+    display: flex;
+   
+}
+   
+.displayFalse {
+   
+    display: none;
+   
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+    
+.flex-wrap {
+    flex-wrap: wrap;
+}
+    
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+  
+.flex-row-reverse {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+}
+    
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: stretch;
+    align-items: stretch;
+}
+
+.stretch {
+    justify-content: stretch;
+    align-items: stretch;
+}
+
+.center {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.text_center {
+    text-align: center;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.relative {
+    position: relative;
+}
+    
+.nullDimensoes {
+    max-width: 0;
+    max-height: 0;
+}
+ 
+.style_template_1 {
+    background: rgb(93, 95, 226);
+    color: rgb(32, 36, 39);
+    /*
+    box-shadow: 0px 0px 25px 25px rgb(8, 19, 29),0px 0px 25px 25px rgb(112, 131, 150); 
+    */
+  }
+.style_template_1_hover:hover {
+    background: rgb(32, 36, 39);
+    color: rgb(93, 95, 226);
+    /*
+    box-shadow: 0px 0px 25px 25px rgb(8, 19, 29),0px 0px 25px 25px rgb(112, 131, 150); 
+    */
+}
+  
+.style_template_2 {
+    background: linear-gradient(rgb(8, 19, 29) 70%, transparent);
+    color: rgb(112, 131, 150);
+    /*
+    box-shadow: 0px 0px 25px 25px rgb(8, 19, 29),0px 0px 25px 25px rgb(112, 131, 150); 
+    */
+}
+
+.style_template_2:hover {
+    background: linear-gradient(rgb(8, 19, 29), rgb(8, 19, 29));
+    color: rgb(112, 131, 150);
+    box-shadow: 0px 0px 50px 50px rgb(8, 19, 29), 0px 0px 50px 50px black; 
+}
+
+.style_template_3 {
+    background: radial-gradient(rgb(175, 29, 85) -80%,black);
+    color: rgb(32, 36, 39);
+}

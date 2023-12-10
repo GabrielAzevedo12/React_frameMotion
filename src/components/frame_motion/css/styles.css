@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
   }
+
 .motion-teste {
     background: radial-gradient(rgb(175, 29, 85) -80%,black);
     border-radius: 30px;
@@ -44,8 +45,7 @@
     font-size: 1.5rem;
   }
 
-  .motion-teste div.bt,
-  .bt {
+  .motion-teste div.bt {
     /*background: linear-gradient(rgb(169, 14, 184),rgb(64, 40, 196));*/
     background: rgb(48, 59, 99);
     border-radius: 30px;
@@ -55,22 +55,15 @@
     width: var(--motion-teste-div-bt-width);
     height: var(--motion-teste-div-bt-height);  
     /*Content*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
     /*Posiçao*/
-    position: relative;
     left: calc( var(--motion-teste-div-bt-width)*0.5 - var(--motion-teste-div-width)*0.5 + -10px );
     /*Text*/
     color: rgb(138, 128, 128);
     font-size: 1.2rem;
   }
-  .bt:hover,
-  .motion-teste div.bt:hover {
+
+  .motion-teste div.bt:hover,
+  .bt:hover {
     z-index: 2;
   }
-  .div_bt {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+
