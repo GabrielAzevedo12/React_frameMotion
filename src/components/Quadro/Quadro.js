@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 export const Quadro = (props) => {
+  const [EventPosiçaoInicialX, setEventPosiçaoInicialX] = useState(0),
+    [EventPosiçaoFinalX, setEventPosiçaoFinalX] = useState(0);
   const Quadro_variants = {
     initial: {
       opacity: 0,
       scale: 0,
     },
     animate: {
-      x: props.x || 0,
+      x: props.const_deslocamento || 0,
     },
     exit: {
       opacity: 0,
@@ -53,12 +55,22 @@ export const Quadro = (props) => {
         }
       }
       onDragStart={(e) => {
-        console.log(e);
-        setEventPosiçaoInicialX(e.x)
+        console.log(e.x);
+        setEventPosiçaoInicialX(e.x);
       }}
       onDragEnd={(e) => {
-        console.log(e);
-        setEventPosiçaoFinalX(e.x)
+        console.log(e.x);
+        setEventPosiçaoFinalX(e.x);
+
+        if (EventPosiçaoFinalX - EventPosiçaoInicialX < 0) {
+          props.setConst_deslocamento(
+            props.const_deslocamento - window.innerWidth * 0.99,
+          );
+        } else if (EventPosiçaoFinalX - EventPosiçaoInicialX > 0) {
+          props.setConst_deslocamento(
+            props.const_deslocamento + window.innerWidth * 0.99,
+          );
+        }
       }}
     >
       {props.text || "Quadro"}
