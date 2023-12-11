@@ -19,7 +19,7 @@ export const FramerMotion5 = (props) => {
   const [ButtonRight_width, setButtonRight_width] = useState("60px");
   const [ButtonRight_height, setButtonRight_height] = useState("30px");
   const [Quadro_width, setQuadro_width] = useState("99vw");
-  const [Quadro_height, setQuadro_height] = useState("50vh");
+  const [Quadro_height, setQuadro_height] = useState("70vh");
   /*
     const x = useMotionValue(0),
     xInput = [-100, 0, 100],

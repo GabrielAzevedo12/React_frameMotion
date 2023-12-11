@@ -2,22 +2,35 @@ import React from "react";
 import { motion } from "framer-motion";
 
 export const Quadro = (props) => {
+  const Quadro_variants = {
+    initial: {
+      opacity: 0,
+      scale: 0,
+    },
+    animate: {
+      x: props.x || 0,
+    },
+    exit: {
+      opacity: 0,
+      scale: 0,
+    },
+  };
+
+  co
+
   return (
     <motion.div
       className={props.className || ""}
+      variants={props.variants || Quadro_variants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
       drag="x"
       dragConstraints={{
         left: 0,
         top: 0,
         bottom: 0,
         right: 0,
-      }}
-      animate={{
-        x: props.x || 0,
-      }}
-      initial={{
-        opacity: 0,
-        scale: 0,
       }}
       whileInView={{
         opacity: 1,
@@ -26,10 +39,14 @@ export const Quadro = (props) => {
       whileHover={{
         scale: 1.2,
       }}
+      transition={{
+        x: { type: "spring", stiffness: 300, damping: 30 },
+        opacity: { duration: 0.5 },
+      }}
       style={
         props.style || {
-          minWidth: "99vw" || props.width,
-          height: "500px" || props.height,
+          minWidth: props.width || "99vw",
+          height: props.height || "500px",
           marginLeft: "0px",
           marginRight: "0px",
           borderRadius: "30px",
@@ -37,6 +54,8 @@ export const Quadro = (props) => {
           fontWeight: 500,
         }
       }
+      onDragStart={props.onDragStart || DragStartDefault}
+      onDragEnd={props.onDragStart || DragEndDefault}
     >
       {props.text || "Quadro"}
     </motion.div>
