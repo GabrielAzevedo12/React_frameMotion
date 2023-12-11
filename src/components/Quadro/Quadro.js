@@ -55,11 +55,12 @@ export const Quadro = (props) => {
         }
       }
       onDragStart={(e) => {
-        console.log(e.x);
+        console.log(e.x, e.target.getBoudingClientRect().x);
         setEventPosiçaoInicialX(e.x);
       }}
       onDragEnd={(e) => {
         console.log(e.x);
+        console.log(e.x, e.target.getBoudingClientRect().x);
         setEventPosiçaoFinalX(e.x);
 
         if (EventPosiçaoFinalX - EventPosiçaoInicialX < 0) {
