@@ -54,9 +54,11 @@ export const Quadro = (props) => {
       }
       onDragStart={(e) => {
         console.log(e);
+        setEventPosiçaoInicialX(e.x)
       }}
       onDragEnd={(e) => {
         console.log(e);
+        setEventPosiçaoFinalX(e.x)
       }}
     >
       {props.text || "Quadro"}
