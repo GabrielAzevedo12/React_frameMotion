@@ -16,8 +16,6 @@ export const Quadro = (props) => {
     },
   };
 
-  co
-
   return (
     <motion.div
       className={props.className || ""}
@@ -54,8 +52,12 @@ export const Quadro = (props) => {
           fontWeight: 500,
         }
       }
-      onDragStart={props.onDragStart || DragStartDefault}
-      onDragEnd={props.onDragStart || DragEndDefault}
+      onDragStart={(e) => {
+        console.log(e);
+      }}
+      onDragEnd={(e) => {
+        console.log(e);
+      }}
     >
       {props.text || "Quadro"}
     </motion.div>
