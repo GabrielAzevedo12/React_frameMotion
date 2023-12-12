@@ -11,6 +11,8 @@ import { motion, useTransform, useMotionValue } from "framer-motion";
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai";
 import { Quadro } from "../Quadro/Quadro";
 import { ButtonDinamico1 } from "../buutonDinamico1/buttonDinamico1";
+import { images as Images } from "../Img/srcs/Images"
+import { Img } from "../Img/Img";
 
 export const FramerMotion5 = (props) => {
   const [const_deslocamento, setConst_deslocamento] = useState(0);
@@ -19,7 +21,7 @@ export const FramerMotion5 = (props) => {
   const [ButtonRight_width, setButtonRight_width] = useState("60px");
   const [ButtonRight_height, setButtonRight_height] = useState("30px");
   const [Quadro_width, setQuadro_width] = useState("99vw");
-  const [Quadro_height, setQuadro_height] = useState("70vh");
+  const [Quadro_height, setQuadro_height] = useState("90vh");
   /*
     const x = useMotionValue(0),
     xInput = [-100, 0, 100],
@@ -33,41 +35,18 @@ export const FramerMotion5 = (props) => {
 */
   return (
     <>
-      <Quadro
-        className="flex-column center text_center style_template_3"
-        const_deslocamento={const_deslocamento}
-        width={`${Quadro_width}`}
-        height={`${Quadro_height}`}
-        setConst_deslocamento={setConst_deslocamento}
-      />
-      <Quadro
-        className="flex-column center text_center style_template_3"
-        const_deslocamento={const_deslocamento}
-        width={`${Quadro_width}`}
-        height={`${Quadro_height}`}
-        setConst_deslocamento={setConst_deslocamento}
-      />
-      <Quadro
-        className="flex-column center text_center style_template_3"
-        const_deslocamento={const_deslocamento}
-        width={`${Quadro_width}`}
-        height={`${Quadro_height}`}
-        setConst_deslocamento={setConst_deslocamento}
-      />
-      <Quadro
-        className="flex-column center text_center style_template_3"
-        const_deslocamento={const_deslocamento}
-        width={`${Quadro_width}`}
-        height={`${Quadro_height}`}
-        setConst_deslocamento={setConst_deslocamento}
-      />
-      <Quadro
-        className="flex-column center text_center style_template_3"
-        const_deslocamento={const_deslocamento}
-        width={`${Quadro_width}`}
-        height={`${Quadro_height}`}
-        setConst_deslocamento={setConst_deslocamento}
-      />
+      {
+        Images.map( src => (
+          <Img 
+          className="flex-column center text_center style_template_3"
+          src={src}
+          const_deslocamento={const_deslocamento}
+          width={`${Quadro_width}`}
+          height={`${Quadro_height}`}
+          setConst_deslocamento={setConst_deslocamento}
+          />
+        ))
+      }
       <div
         className="div_bt flex center fixed"
         style={{

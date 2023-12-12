@@ -35,7 +35,6 @@ export const Img = (props) => {
       id={props.id || ""}
       className={props.className || ""}
       src={props.src || ""}
-      custom={direction}
       variants={props.variants || Img_variants}
       initial="initial"
       animate="animate"
