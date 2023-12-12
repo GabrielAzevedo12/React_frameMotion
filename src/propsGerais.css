@@ -152,3 +152,11 @@
     background: radial-gradient(rgb(175, 29, 85) -80%,black);
     color: rgb(32, 36, 39);
 }
+
+.style_template_4 {
+    width: 500px;
+    height: 500px;
+    border-radius: 30px;
+    background-color: #000;
+    margin-right: 10;
+}

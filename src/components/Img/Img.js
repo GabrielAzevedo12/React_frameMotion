@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 export const Img = (props) => {
-  const [EventPosiçaoInicialX, setEventPosiçaoInicialX] = useState(0),
-    [EventPosiçaoFinalX, setEventPosiçaoFinalX] = useState(0),
-    [EventPosiçaoX, setEventPosiçaoX] = useState(0);
+  const [EventPosiçaoInicialX, setEventPosiçaoInicialX] = useState(0);
     
   const Img_variants = {
     initial: {
@@ -21,7 +19,7 @@ export const Img = (props) => {
   },
   style_default = {
         minWidth: props.width || "99vw",
-        height: props.height || "500px",
+        height: props.height || "99vh",
         marginLeft: 0,
         marginRight: 0,
         borderRadius: "30px",
@@ -63,7 +61,7 @@ export const Img = (props) => {
       }}
       onDragEnd={(e) => {
         //console.log(e.target.getBoundingClientRect().x);
-        setEventPosiçaoFinalX(e.target.getBoundingClientRect().x);
+        //setEventPosiçaoFinalX(e.target.getBoundingClientRect().x);
 
         const ponto_start_dimensoes = document
           .querySelector("#ponto_start")
