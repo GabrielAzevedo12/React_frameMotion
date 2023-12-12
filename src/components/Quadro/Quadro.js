@@ -27,8 +27,8 @@ export const Quadro = (props) => {
       exit="exit"
       drag="x"
       dragConstraints={{
-        left: window.innerWidth * 5 || 0,
-        right: -1 * window.innerWidth * 5 || 0,
+        left:  0,
+        right:  0,
       }}
       dragElastic={1}
       whileInView={{
@@ -61,8 +61,7 @@ export const Quadro = (props) => {
       onDragEnd={(e) => {
         console.log(e.target.getBoundingClientRect().x);
         setEventPosiçaoFinalX(e.target.getBoundingClientRect().x);
-      }}
-      onDragLeave={() => {
+
         const ponto_start_dimensoes = document
           .querySelector("#ponto_start")
           .getBoundingClientRect();
