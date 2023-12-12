@@ -110,8 +110,8 @@ export const FramerMotion5 = (props) => {
         style={{
           borderRadius: "30px",
           marginLeft: "10px",
-          width: "10px",
-          height: "10px",
+          width: "0px",
+          height: "0px",
           left: "0",
           top: "0vh",
         }}
