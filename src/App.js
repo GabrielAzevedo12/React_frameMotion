@@ -9,7 +9,7 @@ import ButtonUsage from './components/ReactUi/Teste/Teste';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App flex-row center">
       <ButtonUsage />
     </div>
   );
