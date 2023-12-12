@@ -3,7 +3,8 @@ import { motion } from "framer-motion";
 
 export const Quadro = (props) => {
   const [EventPosiçaoInicialX, setEventPosiçaoInicialX] = useState(0),
-    [EventPosiçaoFinalX, setEventPosiçaoFinalX] = useState(0);
+    [EventPosiçaoFinalX, setEventPosiçaoFinalX] = useState(0),
+    [EventPosiçaoX, setEventPosiçaoX] = useState(0);
   const Quadro_variants = {
     initial: {
       opacity: 0,
@@ -26,14 +27,16 @@ export const Quadro = (props) => {
       exit="exit"
       drag="x"
       dragConstraints={{
-        left: 0,
-        top: 0,
-        bottom: 0,
-        right: 0,
+        left: window.innerWidth * 5 || 0,
+        right: -1 * window.innerWidth * 5 || 0,
       }}
+      dragElastic={1}
       whileInView={{
         opacity: 1,
         scale: 1,
+      }}
+      whileTap={{
+        opacity: 0.8,
       }}
       transition={{
         x: { type: "spring", stiffness: 300, damping: 30 },
@@ -48,6 +51,7 @@ export const Quadro = (props) => {
           borderRadius: "30px",
           fontSize: "2rem",
           fontWeight: 500,
+          positon: "relative",
         }
       }
       onDragStart={(e) => {
@@ -55,21 +59,19 @@ export const Quadro = (props) => {
         setEventPosiçaoInicialX(e.target.getBoundingClientRect().x);
       }}
       onDragEnd={(e) => {
+        console.log(e.target.getBoundingClientRect().x);
+        setEventPosiçaoFinalX(e.target.getBoundingClientRect().x);
+      }}
+      onDragLeave={() => {
         const ponto_start_dimensoes = document
           .querySelector("#ponto_start")
           .getBoundingClientRect();
 
-        console.log(e.target.getBoundingClientRect().x);
-
-        setEventPosiçaoFinalX(e.x);
-
-        console.log(EventPosiçaoFinalX - EventPosiçaoInicialX);
-
-        if (EventPosiçaoFinalX < ponto_start_dimensoes.x) {
+        if (EventPosiçaoInicialX < ponto_start_dimensoes.x) {
           props.setConst_deslocamento(
             props.const_deslocamento - window.innerWidth * 0.99,
           );
-        } else if (EventPosiçaoFinalX > ponto_start_dimensoes.x) {
+        } else if (EventPosiçaoInicialX > ponto_start_dimensoes.x) {
           props.setConst_deslocamento(
             props.const_deslocamento + window.innerWidth * 0.99,
           );
