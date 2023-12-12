@@ -7,7 +7,7 @@ const opacity = useTransform(x, xInput, opacityOutput)
 const color = useTransform(x, xInput, colorOutput)
 */
 import React, { useState } from "react";
-import { motion, useTransform, useMotionValue } from "framer-motion";
+import { motion, useTransform, useMotionValue, AnimatePresence } from "framer-motion";
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai";
 import { Quadro } from "../Quadro/Quadro";
 import { ButtonDinamico1 } from "../buutonDinamico1/buttonDinamico1";
@@ -21,7 +21,7 @@ export const FramerMotion5 = (props) => {
   const [ButtonRight_width, setButtonRight_width] = useState("60px");
   const [ButtonRight_height, setButtonRight_height] = useState("30px");
   const [Quadro_width, setQuadro_width] = useState("99vw");
-  const [Quadro_height, setQuadro_height] = useState("90vh");
+  const [Quadro_height, setQuadro_height] = useState("99vh");
   /*
     const x = useMotionValue(0),
     xInput = [-100, 0, 100],
@@ -35,7 +35,8 @@ export const FramerMotion5 = (props) => {
 */
   return (
     <>
-      {
+    <AnimatePresence>
+    {
         Images.map( src => (
           <Img 
           className="flex-column center text_center style_template_3"
@@ -47,6 +48,7 @@ export const FramerMotion5 = (props) => {
           />
         ))
       }
+    </AnimatePresence>
       <div
         className="div_bt flex center fixed"
         style={{
