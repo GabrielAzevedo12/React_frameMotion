@@ -17,7 +17,6 @@ export const Quadro = (props) => {
       scale: 0,
     },
   };
-
   return (
     <motion.div
       className={props.className || ""}
@@ -36,9 +35,6 @@ export const Quadro = (props) => {
         opacity: 1,
         scale: 1,
       }}
-      whileHover={{
-        scale: 1.2,
-      }}
       transition={{
         x: { type: "spring", stiffness: 300, damping: 30 },
         opacity: { duration: 0.5 },
@@ -55,19 +51,25 @@ export const Quadro = (props) => {
         }
       }
       onDragStart={(e) => {
-        console.log(e.x, e.target.getBoudingClientRect().x);
-        setEventPosiçaoInicialX(e.x);
+        console.log(e.target.getBoundingClientRect().x);
+        setEventPosiçaoInicialX(e.target.getBoundingClientRect().x);
       }}
       onDragEnd={(e) => {
-        console.log(e.x);
-        console.log(e.x, e.target.getBoudingClientRect().x);
+        const ponto_start_dimensoes = document
+          .querySelector("#ponto_start")
+          .getBoundingClientRect();
+
+        console.log(e.target.getBoundingClientRect().x);
+
         setEventPosiçaoFinalX(e.x);
 
-        if (EventPosiçaoFinalX - EventPosiçaoInicialX < 0) {
+        console.log(EventPosiçaoFinalX - EventPosiçaoInicialX);
+
+        if (EventPosiçaoFinalX < ponto_start_dimensoes.x) {
           props.setConst_deslocamento(
             props.const_deslocamento - window.innerWidth * 0.99,
           );
-        } else if (EventPosiçaoFinalX - EventPosiçaoInicialX > 0) {
+        } else if (EventPosiçaoFinalX > ponto_start_dimensoes.x) {
           props.setConst_deslocamento(
             props.const_deslocamento + window.innerWidth * 0.99,
           );

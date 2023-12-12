@@ -104,6 +104,30 @@ export const FramerMotion5 = (props) => {
           <AiOutlineArrowRight />
         </ButtonDinamico1>
       </div>
+      <div
+        id="ponto_start"
+        className="flex center fixed style_template_1"
+        style={{
+          borderRadius: "30px",
+          marginLeft: "10px",
+          width: "10px",
+          height: "10px",
+          left: "0",
+          top: "0vh",
+        }}
+      ></div>
+      <div
+        id="ponto_end"
+        className="flex center fixed style_template_1"
+        style={{
+          borderRadius: "30px",
+          marginLeft: "10px",
+          width: "10px",
+          height: "10px",
+          left: "98vw",
+          top: "0vh",
+        }}
+      ></div>
     </>
   );
 };
