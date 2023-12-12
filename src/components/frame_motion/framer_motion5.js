@@ -13,6 +13,7 @@ import { Quadro } from "../Quadro/Quadro";
 import { ButtonDinamico1 } from "../buutonDinamico1/buttonDinamico1";
 import { images as Images } from "../Img/srcs/Images"
 import { Img } from "../Img/Img";
+import { Swiper_Teste } from "../Swipe/Teste/Teste";
 
 export const FramerMotion5 = (props) => {
   const [const_deslocamento, setConst_deslocamento] = useState(0);
@@ -49,6 +50,7 @@ export const FramerMotion5 = (props) => {
         ))
       }
     </AnimatePresence>
+
       <div
         className="div_bt flex center fixed"
         style={{
@@ -85,6 +87,7 @@ export const FramerMotion5 = (props) => {
           <AiOutlineArrowRight />
         </ButtonDinamico1>
       </div>
+
       <div
         id="ponto_start"
         className="flex center fixed style_template_1"
@@ -109,6 +112,7 @@ export const FramerMotion5 = (props) => {
           top: "0vh",
         }}
       ></div>
+      
     </>
   );
 };
