@@ -30,23 +30,29 @@ import { Img } from "../Img/Img";
 import { Slide } from "../Slide/Slide";
 
 export const FramerMotion5 = (props) => {
-  const [const_deslocamento, setConst_deslocamento] = useState(0);
-  const [Quadro_width, setQuadro_width] = useState("99vw");
-  const [Quadro_height, setQuadro_height] = useState("99vh");
+  const 
+  [const_deslocamento, setConst_deslocamento] = useState(0),
+  [Quadro_width, setQuadro_width] = useState("99vw"),
+  [Quadro_height, setQuadro_height] = useState("99vh");
+
+  var index = 1;
+
 
   return (
     <Slide const_deslocamento={const_deslocamento} setConst_deslocamento={setConst_deslocamento}>
        {
-        Images.map( src => (
-          <Img 
+        Images.map( src => {
+          index++;
+          return ( <Img 
           className="flex center text_center style_template_3"
           src={src}
+          id={index - 1}
           width={Quadro_width}
           height={Quadro_height}
           const_deslocamento={const_deslocamento}
           setConst_deslocamento={setConst_deslocamento}
-          />
-        ))
+          /> )
+})
       }
     </Slide>
   );

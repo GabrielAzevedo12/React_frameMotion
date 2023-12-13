@@ -67,11 +67,10 @@ export const Slide = (props) => {
         className="flex center fixed style_template_1"
         style={{
           borderRadius: "30px",
-          marginLeft: "10px",
           width: "0px",
           height: "0px",
           left: "0",
-          top: "0vh",
+          top: "0",
         }}
       ></div>
       <div
@@ -79,11 +78,10 @@ export const Slide = (props) => {
         className="flex center fixed style_template_1"
         style={{
           borderRadius: "30px",
-          marginLeft: "10px",
           width: "10px",
           height: "10px",
           left: "98vw",
-          top: "0vh",
+          top: "0",
         }}
       ></div>
       

@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 export const Img = (props) => {
-  const [EventPosiçaoInicialX, setEventPosiçaoInicialX] = useState(0);
+  const [EventPosiçaoInicialX, setEventPosiçaoInicialX] = useState(0),
+  [EventPosiçaoFinalX, setEventPosiçaoFinalX] = useState(0),
+  [ElementView, setElementView] = useState(undefined);
     
   const Img_variants = {
     initial: {
@@ -56,16 +58,24 @@ export const Img = (props) => {
       }}
       style={ props.style || style_default }
       onDragStart={(e) => {
-        console.log(e.target.getBoundingClientRect().x);
+        //console.log(e.target.getBoundingClientRect().x);
         setEventPosiçaoInicialX(e.target.getBoundingClientRect().x);
       }}
       onDragEnd={(e) => {
         //console.log(e.target.getBoundingClientRect().x);
-        //setEventPosiçaoFinalX(e.target.getBoundingClientRect().x);
+        setEventPosiçaoFinalX(e.target.getBoundingClientRect().x);
 
         const ponto_start_dimensoes = document
           .querySelector("#ponto_start")
           .getBoundingClientRect();
+
+        if(EventPosiçaoInicialX - ponto_start_dimensoes.x === 0 || EventPosiçaoFinalX - ponto_start_dimensoes.x === 0) {
+          console.log("Está em View");
+          setElementView(e.target);
+        }
+        
+        //console.log(EventPosiçaoFinalX, EventPosiçaoInicialX);
+        //console.log(EventPosiçaoFinalX - ponto_start_dimensoes.x);
 
         if (EventPosiçaoInicialX < ponto_start_dimensoes.x) {
           props.setConst_deslocamento(
