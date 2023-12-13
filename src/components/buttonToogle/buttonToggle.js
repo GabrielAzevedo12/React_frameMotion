@@ -18,11 +18,15 @@ visible = {
    },
 snow = {
     backgroundColor: "white",
-    color: "rgb(88, 79, 79)"
+    color: "rgb(88, 79, 79)",
+    width: "60px",
+    height:"30px",
 },
 dark = {
     backgroundColor: "black",
-    color: "rgb(88, 79, 79)"
+    color: "rgb(88, 79, 79)",
+    width: "60px",
+    height: "30px",
 },
 rotate0 = {
     rotate: 0
@@ -73,8 +77,8 @@ export default function ButtonToggle(props) {
 
   const x = useMotionValue(0)
   const y = useMotionValue(0)
-  const width = useTransform(x, [-100, 0, 100], [600, 0, 600])
-  const height = useTransform(y, [-100, 0, 100], [600, 0, 600])
+  const width = useTransform(x, [-100, 0, 100], [600, 600, 600])
+  const height = useTransform(y, [-100, 0, 100], [600, 600, 600])
 
   return (
   <motion.div 
@@ -82,7 +86,6 @@ export default function ButtonToggle(props) {
   className={props.className || ""}
   style={{ x, y, width, height }}
   drag
-
   dragConstraints={{ 
     left: 50,
     top: 0,

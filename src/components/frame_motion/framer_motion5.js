@@ -39,7 +39,7 @@ export const FramerMotion5 = (props) => {
        {
         Images.map( src => (
           <Img 
-          className="flex-column center text_center style_template_3"
+          className="flex center text_center style_template_3"
           src={src}
           width={Quadro_width}
           height={Quadro_height}

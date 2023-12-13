@@ -13,8 +13,11 @@ import FramerMotion from './components/frame_motion/framer_motion';
 */
 function App() {
   return (
-    <div className="App flex-column stretch text-center">
-      <div className="flex-row center text-center">
+    <div className="App flex-column text-center">
+      <div className="flex-row center text-center" style={{
+        maxWidth: "100vw",
+        minHeight: "100vh",
+        overflow: "hidden"}}>
       <FramerMotion5 
       className="flex-column center text_center style_template_3"
       style={{
@@ -27,7 +30,7 @@ function App() {
         fontWeight: 500
       }} />
        </div>
-       <ButtonToggle />
+      <ButtonToggle />
     </div>
   );
 }
