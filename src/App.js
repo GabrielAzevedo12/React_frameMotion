@@ -2,9 +2,10 @@ import './App.css';
 import './propsGerais.css'
 import { FramerMotion5 } from './components/frame_motion/framer_motion5';
 import "./components/frame_motion/css/styles.css"
-import { Example } from './components/PageEffects/Exemplo';
+import ButtonToggle from './components/buttonToogle/buttonToggle';
 
 /*
+import { Example } from './components/PageEffects/Exemplo';
 import { Swiper_Teste } from './components/Swipe/Teste/Teste';
 import ButtonUsage from './components/ReactUi/Teste/Teste';
 import ButtonToggle from './components/buttonToogle/buttonToggle';
@@ -12,7 +13,8 @@ import FramerMotion from './components/frame_motion/framer_motion';
 */
 function App() {
   return (
-    <div className="App flex-row center text-center">
+    <div className="App flex-column stretch text-center">
+      <div className="flex-row center text-center">
       <FramerMotion5 
       className="flex-column center text_center style_template_3"
       style={{
@@ -24,6 +26,8 @@ function App() {
         fontSize: "2rem",
         fontWeight: 500
       }} />
+       </div>
+       <ButtonToggle />
     </div>
   );
 }
