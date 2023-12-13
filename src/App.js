@@ -31,8 +31,6 @@ function App() {
       }} />
        </div>
       <div className='flex-row' style={{
-        justifyContent: "space-evenly",
-        minWidth: "30vw",
         minHeight: "50vh"
       }}>
         <ButtonToggle />

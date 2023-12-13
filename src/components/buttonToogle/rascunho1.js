@@ -17,7 +17,15 @@ visible = {
     y: 0,
     x: 0,
     opacity: 1
-   };
+   },
+snow = {
+    backgroundColor: "white",
+    color: "rgb(88, 79, 79)",
+},
+dark = {
+    backgroundColor: "black",
+    color: "rgb(88, 79, 79)",
+};
 
 /*
 const list = { hidden: { opacity: 0 } }
@@ -53,72 +61,64 @@ drag="x"
        <motion.div variants={item} />
        <motion.div variants={item} />
     </motion.div>
+*/
+export default function ButtonToggle(props) {
+  const [animateMotionTesteDiv, setAnimateMotionTesteDiv] = useState(hidden);
+  const [animateMotionTesteDivBt, setAnimateMotionTesteDivBt] = useState(undefined);
+  const [styleBt, setStyleBt] = useState(dark);
 
-    const x = useMotionValue(0)
+  const x = useMotionValue(0)
   const y = useMotionValue(0)
   const width = useTransform(x, [-100, 0, 100], [600, 0, 600])
   const height = useTransform(y, [-100, 0, 100], [600, 0, 600])
-*/
-export default function ButtonToggle(props) {
-  const [animateMotionTesteDivDisplay, setAnimateMotionTesteDivDisplay] = useState(hidden);
 
-  const
-  bt_props = {
-    variants : {
-      initial : {
-        x: 0,
-        y: 0,
-        borderRadius: 30,
-        opacity: animateMotionTesteDivDisplay === true ? 1 : 0.7,
-        scale: 0.9
-      },
-      rotate0 : {
-        rotate: 0,
-        x: 0,
-        y: 0
-      },
-      rotate180 : {
-        rotate: 180,
-        x: -60,
-        y: 50
-      }
+  const variants_bt ={
+    initial : {
+      x: 0,
+      y: 0,
+      borderRadius: 30,
+      opacity: animateMotionTesteDiv === visible ? 1 : 0.7,
+      scale: 0.9
     },
-  styles : {
-    snow : {
-      backgroundColor: "white",
-      color: "rgb(88, 79, 79)",
-  },
-    dark : {
-      backgroundColor: "black",
-      color: "rgb(88, 79, 79)",
+    rotate0 : {
+      rotate: 0,
+      x: 0,
+      y: 0
+    },
+    rotate180 : {
+      rotate: 180,
+      x: -60,
+      y: 50
+    }
   }
-  }},
-  bt_div_props = {
-    variants : {
-      hidden : { 
-        scale: 0.3,
-        y: -140,
-        x: 0,
-        opacity: 0.2
-       },
-      visible : { 
-        scale: 1,
-        y: 0,
-        x: 0,
-        opacity: 1
-       }
-    },
-  styles : {
-  }};
 
   return (
-  <div className="flex-column center">
+  <motion.div 
+  id="ButtonToogleContainer"
+  className={props.className || ""}
+  style={{ x, y, width, height }}
+  drag
+  dragConstraints={{ 
+    left: 50,
+    top: 0,
+    bottom: 0,
+    right: 0 }}
+
+  whileInView={{ 
+    scale: [0, 0, 1, 1],
+    borderRadius: ["0%", "50%", "50%", "10%"],  
+    rotate: [360, 360, 0, 0],
+    x: [-700, -700, 100, 0],
+    opacity: [0, 0, 1, 1] }}
+
+  transition={{ duration: 1 }}
+  viewport={{ once: true }}>
+
     <motion.div 
     id="bt"
-    className="flex center"
-    variants={bt_props.variants}
+    variants={variants_bt}
     initial="initial"
-    animate= {animateMotionTesteDivDisplay === true ?
+    animate= {animateMotionTesteDiv === visible ?
     "rotate180" : "rotate0"}
     whileTap={{ scale: 1.1 }}
     whileHover={{ 
@@ -127,31 +127,28 @@ export default function ButtonToggle(props) {
       opacity: 1,
       backgroundColor: "white"
      }}
-    style={animateMotionTesteDivDisplay === true ?
-      bt_props.styles.snow : bt_props.styles.dark}
+    style={animateMotionTesteDiv === visible ?
+      snow : dark}
     onClick={() => {
-        animateMotionTesteDivDisplay === true ?
-        setAnimateMotionTesteDivDisplay(false) : setAnimateMotionTesteDivDisplay(true)
+        animateMotionTesteDiv === visible ?
+        setAnimateMotionTesteDiv(hidden) : setAnimateMotionTesteDiv(visible)
     } 
         }>
            <AiOutlineUp />
     </motion.div>
 
-    <motion.div
-    id="ButtonToogleContainer_div"
-    variants={bt_div_props.variants}
-    initial="hidden"
-    animate={ animateMotionTesteDivDisplay === true ?
-      "visible" : "hidden"} >
+    <motion.div 
+    animate={animateMotionTesteDiv} >
       <div>Drag me</div>
     </motion.div>
-  </div>
+
+  </motion.div>
   )
 }
 
 /*
  {
-            animateMotionTesteDivDisplay === true ?
+            animateMotionTesteDiv === visible ?
             <AiOutlineUp /> : <AiOutlineDown />}
 
 initial={{

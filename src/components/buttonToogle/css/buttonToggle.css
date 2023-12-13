@@ -18,7 +18,8 @@
     font-weight: 500;
   }
   
-  #ButtonToogleContainer div {
+  #ButtonToogleContainer div,
+  #ButtonToogleContainer_div {
     background: black;
     border-radius: 30px;
     /*Dimensões*/
@@ -39,7 +40,8 @@
     font-size: 1.5rem;
   }
 
-  #ButtonToogleContainer div#bt {
+  #ButtonToogleContainer div#bt,
+  #bt {
     /*background: linear-gradient(rgb(169, 14, 184),rgb(64, 40, 196));*/
     background: rgb(42, 44, 51);
     /*Dimensões*/
