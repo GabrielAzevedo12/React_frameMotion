@@ -30,7 +30,14 @@ function App() {
         fontWeight: 500
       }} />
        </div>
-      <ButtonToggle />
+      <div className='flex-row' style={{
+        justifyContent: "space-evenly",
+        minWidth: "30vw",
+        minHeight: "50vh"
+      }}>
+        <ButtonToggle />
+        <ButtonToggle />
+      </div>
     </div>
   );
 }

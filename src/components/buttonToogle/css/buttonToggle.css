@@ -43,15 +43,17 @@
     /*background: linear-gradient(rgb(169, 14, 184),rgb(64, 40, 196));*/
     background: rgb(42, 44, 51);
     /*Dimensões*/
-    --ButtonToogleContainer-div-bt-width: 50px;
-    --ButtonToogleContainer-div-bt-height: 75px;
+    --ButtonToogleContainer-div-bt-width: 60px;
+    --ButtonToogleContainer-div-bt-height: 30px;
     width: var(--ButtonToogleContainer-div-bt-width);
     height: var(--ButtonToogleContainer-div-bt-height);  
     /*Content*/
     z-index: 2;
     /*Posiçao*/
-    left: calc( var(--ButtonToogleContainer-div-bt-width)*0.5 - var(--ButtonToogleContainer-div-width)*0.5 + -10px );
-    top: calc( -20px + var(--ButtonToogleContainer-div-bt-height)*0.5 );
+    /*
+    left: calc( var(--ButtonToogleContainer-div-bt-width)*0.5 - var(--ButtonToogleContainer-div-width)*0.5 + 20px );
+    top: calc( var(--ButtonToogleContainer-div-bt-height) + 20px);
+    */
     /*Text*/
     font-size: 1.2rem;
   }

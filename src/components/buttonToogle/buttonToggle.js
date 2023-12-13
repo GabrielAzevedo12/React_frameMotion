@@ -6,34 +6,26 @@ import { AiOutlineUp } from "react-icons/ai";
 
 const 
 hidden ={ 
-    scale: 0,
-    y: -100,
-    x: -100
+    scale: 0.3,
+    y: -140,
+    x: 0,
+    opacity: 0.2
    },
 
 visible = { 
     scale: 1,
     y: 0,
-    x: 0
+    x: 0,
+    opacity: 1
    },
 snow = {
     backgroundColor: "white",
     color: "rgb(88, 79, 79)",
-    width: "60px",
-    height:"30px",
 },
 dark = {
     backgroundColor: "black",
     color: "rgb(88, 79, 79)",
-    width: "60px",
-    height: "30px",
-},
-rotate0 = {
-    rotate: 0
-},
-rotate360 = {
-    rotate: 180
-};   
+};
 
 /*
 const list = { hidden: { opacity: 0 } }
@@ -72,13 +64,33 @@ drag="x"
 */
 export default function ButtonToggle(props) {
   const [animateMotionTesteDiv, setAnimateMotionTesteDiv] = useState(hidden);
-  const [animateMotionTesteDivBt, setAnimateMotionTesteDivBt] = useState(rotate0);
+  const [animateMotionTesteDivBt, setAnimateMotionTesteDivBt] = useState(undefined);
   const [styleBt, setStyleBt] = useState(dark);
 
   const x = useMotionValue(0)
   const y = useMotionValue(0)
-  const width = useTransform(x, [-100, 0, 100], [600, 600, 600])
-  const height = useTransform(y, [-100, 0, 100], [600, 600, 600])
+  const width = useTransform(x, [-100, 0, 100], [600, 0, 600])
+  const height = useTransform(y, [-100, 0, 100], [600, 0, 600])
+
+  const variants_bt ={
+    initial : {
+      x: 0,
+      y: 0,
+      borderRadius: 30,
+      opacity: animateMotionTesteDiv === visible ? 1 : 0.7,
+      scale: 0.9
+    },
+    rotate0 : {
+      rotate: 0,
+      x: 0,
+      y: 0
+    },
+    rotate180 : {
+      rotate: 180,
+      x: -60,
+      y: 50
+    }
+  }
 
   return (
   <motion.div 
@@ -104,28 +116,24 @@ export default function ButtonToggle(props) {
 
     <motion.div 
     id="bt"
-    initial={{
-      borderRadius: 30,
-      opacity: animateMotionTesteDiv === visible ? 1 : 0.7,
-      scale: 1.2,
-      }}
+    variants={variants_bt}
+    initial="initial"
+    animate= {animateMotionTesteDiv === visible ?
+    "rotate180" : "rotate0"}
     whileTap={{ scale: 1.1 }}
     whileHover={{ 
       scale: 1.5,
       borderRadius: 50,
-      opacity: 1
+      opacity: 1,
+      backgroundColor: "white"
      }}
-    style={styleBt}
+    style={animateMotionTesteDiv === visible ?
+      snow : dark}
     onClick={() => {
         animateMotionTesteDiv === visible ?
         setAnimateMotionTesteDiv(hidden) : setAnimateMotionTesteDiv(visible)
-        animateMotionTesteDiv === visible ?
-        setStyleBt(dark) : setStyleBt(snow)
-        animateMotionTesteDiv === visible ?
-        setAnimateMotionTesteDivBt(rotate360) : setAnimateMotionTesteDivBt(rotate0)
     } 
-        }
-    animate={animateMotionTesteDivBt}>
+        }>
            <AiOutlineUp />
     </motion.div>
 
