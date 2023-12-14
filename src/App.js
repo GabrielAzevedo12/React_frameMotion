@@ -3,6 +3,7 @@ import './propsGerais.css'
 import { FramerMotion5 } from './components/frame_motion/framer_motion5';
 import "./components/frame_motion/css/styles.css"
 import ButtonToggle from './components/buttonToogle/buttonToggle';
+import FormExample from './components/HookForm/Example2';
 
 /*
 import { Example } from './components/PageEffects/Exemplo';
@@ -13,7 +14,7 @@ import FramerMotion from './components/frame_motion/framer_motion';
 */
 function App() {
   return (
-    <div className="App flex-column text-center">
+    <div className="App flex-column text-center center">
       <div className="flex-row center text-center" style={{
         maxWidth: "100vw",
         minHeight: "100vh",
@@ -35,6 +36,9 @@ function App() {
       }}>
         <ButtonToggle />
         <ButtonToggle />
+      </div>
+      <div>
+        <FormExample />
       </div>
     </div>
   );
