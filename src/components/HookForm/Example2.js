@@ -40,6 +40,13 @@ margin-top: 10px;
 font-size: 1.2rem;
 `
 
+const StyledLabel = styled(motion.label)`
+font-size: 1.5rem;
+margin-top: 10px;
+color: black;
+font-weight: bold;
+`
+
 export default function FormExample(props) {
   const { register, handleSubmit } = useForm()
   const onSubmit = (data) => console.log(data)
@@ -151,17 +158,19 @@ export default function FormExample(props) {
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)} className={`${props.ClassName} flex-column`}>
       <StyledMotionInput variants={input_props.variants} initial="initial" whileInView="whileView" {...register("firstName")} whileHover="whileHover" />
-      <StyledMotionSelect variants={input_props.variants} initial="initial" whileInView="whileView" {...register("gender")} whileHover="whileHover">
+      <StyledLabel for="Select_Caderno" className="center flex"> Cadernos </StyledLabel>
+      <StyledMotionSelect id="Select_Caderno" variants={input_props.variants} initial="initial" whileInView="whileView" {...register("gender")} whileHover="whileHover">
         <StyledMotionOption value="female">female</StyledMotionOption>
         <StyledMotionOption value="male">male</StyledMotionOption>
         <StyledMotionOption value="other">other</StyledMotionOption>
       </StyledMotionSelect>
-      <StyledMotionSelect variants={input_props.variants} initial="initial" whileInView="whileView" {...register("gender")} whileHover="whileHover">
+      <StyledLabel for="Select_Seçao" className="center flex"> Seção </StyledLabel>
+      <StyledMotionSelect id="Select_Seçao" variants={input_props.variants} initial="initial" whileInView="whileView" {...register("gender")} whileHover="whileHover">
         <StyledMotionOption value="female">female</StyledMotionOption>
         <StyledMotionOption value="male">male</StyledMotionOption>
         <StyledMotionOption value="other">other</StyledMotionOption>
       </StyledMotionSelect>
-      <StyledMotionInput variants={input_props.variants} initial="initial" whileInView="whileView" whileHover="whileHover" type="submit" />
+      <StyledMotionInput variants={input_props.variants} initial="initial" whileInView="whileView" whileHover="whileHover" type="submit" value="Consultar" />
     </StyledForm>
   )
 }

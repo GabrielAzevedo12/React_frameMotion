@@ -23,6 +23,10 @@ const StyledContact = styled.div`
     & div.RotasContato {
         min-width: 50vw;
         }
+
+    & div.RotasContato div {
+        margin-right: 10px;
+        }    
     @media (max-width: 500px) {
         & h1 {
                font-size: 4rem;

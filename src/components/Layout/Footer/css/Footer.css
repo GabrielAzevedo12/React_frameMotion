@@ -4,10 +4,12 @@
     min-width: 100vw;
     min-height: 15vh;
     max-height: 15vh;
+    --FooterHeight: 15vh;
     z-index: 2;
     position: fixed;
     top: 85vh;
     text-align: center;
+    top: calc(100vh - var(--FooterHeight));
 }
 .Footer_item {
     font-size: 1.5rem;
