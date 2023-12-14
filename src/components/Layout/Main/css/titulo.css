@@ -1,0 +1,13 @@
+@media only screen and (min-width: 1024px) {
+    .titulo {
+        grid-area: Main;
+        max-height: 50vh;
+        max-width: 90vw;
+        min-height: 50vh;
+        min-width: 90vw;
+        background-color: rgba(128, 22, 22, 0.26);
+        color: rgb(125, 125, 158);
+        font-size: 5rem;
+        z-index: 1;
+    }
+  }

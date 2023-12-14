@@ -1,0 +1,46 @@
+.Animation_Header_AlterarDimensoes:hover {
+    animation: Animation_Header_AlterarDimensoes1 1s cubic-bezier(.52,1.51,.83,.67);
+    background: rgb(45, 59, 71) ;
+    color: rgb(8, 19, 29);
+    height: calc(var(--heightHeader) + 5vh);
+    box-shadow: 0px 0px 50px 50px rgb(45, 59, 71), 0px 0px 50px 50px black; 
+}
+
+@keyframes Animation_Header_AlterarDimensoes1  {
+    from {
+        height: var(--heightHeader) ;
+        background: linear-gradient(rgb(8, 19, 29) 70%, transparent);
+        color: rgb(112, 131, 150);
+        box-shadow: 0px 0px 0px 0px rgb(45, 59, 71), 0px 0px 0px 0px black; 
+    }
+    to {
+        background: rgb(45, 59, 71) ;
+        color: rgb(8, 19, 29);
+        height: calc(var(--heightHeader) + 5vh);
+        box-shadow: 0px 0px 50px 50px rgb(45, 59, 71), 0px 0px 50px 50px black; 
+    }
+  }
+
+.Animation_Header_AlterarDimensoes:not(:hover) {
+    animation: Animation_Header_AlterarDimensoes2 1s cubic-bezier(.52,1.51,.83,.67);
+    height: var(--heightHeader) ;
+    background: linear-gradient(rgb(8, 19, 29) 70%, transparent);
+    color: rgb(112, 131, 150);
+    box-shadow: 0px 0px 0px 0px rgb(45, 59, 71), 0px 0px 0px 0px black; 
+}
+
+@keyframes Animation_Header_AlterarDimensoes2  {
+    from {
+        background: rgb(45, 59, 71) ;
+        color: rgb(8, 19, 29);
+        height: calc(var(--heightHeader) + 5vh);
+        box-shadow: 0px 0px 50px 50px rgb(45, 59, 71), 0px 0px 50px 50px black; 
+    }
+    to {
+        height: var(--heightHeader) ;
+        background: linear-gradient(rgb(8, 19, 29) 70%, transparent);
+        color: rgb(112, 131, 150);
+        box-shadow: 0px 0px 0px 0px rgb(45, 59, 71), 0px 0px 0px 0px black; 
+    }
+  }
+

@@ -1,0 +1,13 @@
+.Animation_Footer_moverTop_ocf0krF3qPr {
+    animation: Animation_Footer_moverTop_ocf0krF3qPr 1s 1;
+    opacity: 0%;
+}
+
+@keyframes Animation_Footer_moverTop_ocf0krF3qPr {
+    from {
+        opacity: 100%;
+    }
+    to {
+        opacity: 0%;
+    }
+  }

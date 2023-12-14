@@ -1,0 +1,16 @@
+.Animation_Header_moverTop_c3Bp26yyxUn {
+    animation: Animation_Header_moverTop_c3Bp26yyxUn 1s 1;
+    height: var(--heightHeader);
+    min-height: var(--heightHeader);
+}
+
+@keyframes Animation_Header_moverTop_c3Bp26yyxUn {
+    from {
+        height: 0vh;
+        min-height: 0vh;
+    }
+    to {
+        height: var(--heightHeader);
+        min-height: var(--heightHeader);
+    }
+  }

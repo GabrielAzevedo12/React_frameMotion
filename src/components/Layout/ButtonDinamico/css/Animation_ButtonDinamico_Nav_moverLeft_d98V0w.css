@@ -1,0 +1,17 @@
+.Animation_ButtonDinamico_Nav_moverLeft_d98V0w {
+    position: relative;
+    animation: Animation_ButtonDinamico_Nav_moverLeft_d98V0w 1s 1;
+    left: -10px;
+    rotate: 180deg;
+}
+
+@keyframes Animation_ButtonDinamico_Nav_moverLeft_d98V0w {
+    from {
+        left: 0px;
+        rotate: 0deg;
+    }
+    to {
+        left: -10px;
+        rotate: 180deg;
+    }
+  }

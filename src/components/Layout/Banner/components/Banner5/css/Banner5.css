@@ -1,0 +1,7 @@
+#Banner5 {
+    grid-area: Banner5;
+    min-width: 30vw;
+    min-height: 30vh;
+    height: 50vh;
+    background-color: rgb(43, 32, 53);
+}

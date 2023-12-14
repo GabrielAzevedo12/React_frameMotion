@@ -93,6 +93,10 @@
     align-items: stretch;
 }
 
+.space-between {
+    justify-content: space-between;
+}
+
 .center {
     align-items: center;
     justify-content: center;

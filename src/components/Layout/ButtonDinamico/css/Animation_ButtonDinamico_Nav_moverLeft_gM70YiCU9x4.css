@@ -1,0 +1,17 @@
+.Animation_ButtonDinamico_Nav_moverLeft_gM70YiCU9x4 {
+    position: relative;
+    animation: Animation_ButtonDinamico_Nav_moverLeft_gM70YiCU9x4 1s 1;
+    left: -10px;
+    rotate: 0deg;
+}
+
+@keyframes Animation_ButtonDinamico_Nav_moverLeft_gM70YiCU9x4 {
+    from {
+        left: -10px;
+        rotate: 180deg;
+    }
+    to {
+        left: -10px;
+        rotate: 0deg;
+    }
+  }

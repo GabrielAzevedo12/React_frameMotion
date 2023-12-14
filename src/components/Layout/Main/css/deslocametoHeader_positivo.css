@@ -1,0 +1,17 @@
+.deslocametoHeader_positivo {
+    animation-name: deslocametoHeader_positivo;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    height: 9vh;
+
+}
+
+@keyframes deslocametoHeader_positivo {
+    from {
+        top: 100vh;
+      }
+    
+      to {
+        top: 90vh;
+      }
+  }

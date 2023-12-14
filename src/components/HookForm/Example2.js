@@ -156,6 +156,11 @@ export default function FormExample(props) {
         <StyledMotionOption value="male">male</StyledMotionOption>
         <StyledMotionOption value="other">other</StyledMotionOption>
       </StyledMotionSelect>
+      <StyledMotionSelect variants={input_props.variants} initial="initial" whileInView="whileView" {...register("gender")} whileHover="whileHover">
+        <StyledMotionOption value="female">female</StyledMotionOption>
+        <StyledMotionOption value="male">male</StyledMotionOption>
+        <StyledMotionOption value="other">other</StyledMotionOption>
+      </StyledMotionSelect>
       <StyledMotionInput variants={input_props.variants} initial="initial" whileInView="whileView" whileHover="whileHover" type="submit" />
     </StyledForm>
   )

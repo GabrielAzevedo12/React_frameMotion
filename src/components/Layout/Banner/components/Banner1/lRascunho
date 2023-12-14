@@ -1,0 +1,22 @@
+let StyledSubBanner = 
+  styled(SubBanner)`
+  position: relative;
+  ${
+  props => props.animation && !props.OverSubBanner ? 
+  `animation: ${MovLeft_subBanner} 90s cubic-bezier(.79,2.01,.83,.67) infinite ;` :
+  `` 
+  }
+  ` 
+
+  let StyledSubBanner = useRef() ;
+   
+   useEffect(() => {
+
+    StyledSubBanner.current = 
+    states.OverSubBanner ? 
+    styled(SubBanner)`
+    position: relative;` :
+    styled(SubBanner)`
+    position: relative;`
+
+  }, [states.OverSubBanner])

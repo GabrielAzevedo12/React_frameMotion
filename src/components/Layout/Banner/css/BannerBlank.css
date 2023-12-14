@@ -1,0 +1,7 @@
+#BannerBlank {
+    grid-area: BannerBlank;
+    min-width: 99vw;
+    min-height: 10vh;
+    background: linear-gradient(rgb(21, 19, 22) 5%, black);
+}
+

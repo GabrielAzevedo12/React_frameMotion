@@ -1,0 +1,12 @@
+.Container_Layout_Default {
+    display: flex;
+    flex-wrap: wrap;
+    width: 99vw;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.min-hight-container {
+    height: 50vh;
+}

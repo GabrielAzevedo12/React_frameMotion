@@ -1,0 +1,27 @@
+.opacity_from_100_to_0 {
+    animation: opacity_from_100_to_0 0.5s 1;
+    opacity: 0%;
+}
+
+@keyframes opacity_from_100_to_0 {
+    from {
+        opacity: 100%;
+    }
+    to {
+        opacity: 0%;
+    }
+  }
+
+.opacity_from_0_to_100 {
+    animation: opacity_from_0_to_100 1.5s 1;
+    opacity: 100%;
+}
+
+@keyframes opacity_from_0_to_100 {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
+  }

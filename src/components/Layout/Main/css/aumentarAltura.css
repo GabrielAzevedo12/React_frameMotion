@@ -1,0 +1,17 @@
+.aumentarAltura {
+    animation-name: aumentarAltura;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    height: 9vh;
+
+}
+
+@keyframes aumentarAltura {
+    from {
+        height: 0vh;
+      }
+    
+      to {
+        height: 9vh;
+      }
+  }

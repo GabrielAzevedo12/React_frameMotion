@@ -1,0 +1,17 @@
+.diminuirAltura {
+    animation-name: diminuirAltura;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    height: 9vh;
+
+}
+
+@keyframes diminuirAltura {
+    from {
+        height: 9vh;
+      }
+    
+      to {
+        height: 0vh;
+      }
+  }

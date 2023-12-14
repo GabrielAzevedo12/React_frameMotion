@@ -1,0 +1,16 @@
+@media only screen and (min-width: 1024px) {
+    .Main_Conatiner_Filho {
+        grid-area: Main;
+        max-height: 99vh;
+        max-width: 99vw;
+        min-height: 99vh;
+        min-width: 99vw;
+        background-color: black;
+        color: rgb(125, 125, 158);
+        font-size: 5rem;
+        z-index: 1;
+        align-items: center;
+        justify-content: center;
+        overflow-y: scroll;
+    }
+  }

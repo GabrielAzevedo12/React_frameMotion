@@ -1,0 +1,13 @@
+.Animation_Footer_moverTop_59gFfkGIGd7 {
+    animation: Animation_Footer_moverTop_59gFfkGIGd7 1s 1;
+    opacity: 100%;
+}
+
+@keyframes Animation_Footer_moverTop_59gFfkGIGd7 {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
+  }
