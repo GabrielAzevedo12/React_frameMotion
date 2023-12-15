@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 //import FakeText from "../../FakeText/FakeText";
 import './css/Home.css';
 import { esconder, exibir, Existe_Class, $, Adicionar_class, Remover_class, nothing } from "../../funçoes/funçoes";
@@ -59,6 +59,9 @@ window.addEventListener('scroll', () => {
 })
 
 const Home = () => { 
+  useEffect(() => {
+    Adicionar_class(document.querySelector(".Header"), "Header-height") ;
+  }, []);
     return ( 
           <div className="Home_Container flex center" onScroll={(e) => {
             //ScrollMain_onScroll(e.target)

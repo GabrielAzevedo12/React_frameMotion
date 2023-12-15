@@ -15,13 +15,22 @@ import Home from '../../Pages/Home/Home';
 import Contact from '../../Pages/Contact/Contact';
 import About from '../../Pages/About/About';
 import Container from '../Container/Container';
+import styled from 'styled-components';
+import { flexColumn } from '../../../propsGerais.css';
 
-
+const StyledMain = styled.main`  
+@media (max-width: 500px) {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+}            
+    `
 function Main() {
   const name = "Teste"
   return (
     <Router>
-    <main>
+    <StyledMain>
     <Header mobile={true} />
       <Container CustomClass="min-hight-container">
          <Routes>
@@ -32,7 +41,7 @@ function Main() {
          </Routes>
       </Container>
       <Footer />
-    </main>
+    </StyledMain>
   </Router>
   );
 }

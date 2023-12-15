@@ -18,7 +18,8 @@ const StyledContact = styled.div`
 
     & > div {
         width: 100vw;
-        min-height: 100vh;
+        height: 100vh;
+        max-height: 100vh;      
         }
 
     & div.RotasContato {
@@ -35,7 +36,7 @@ const StyledContact = styled.div`
      }  
      @media (max-width: 280px) {
         & h1 {
-               font-size: 3rem;
+               font-size: 4rem;
            } 
      }        
     `

@@ -7,7 +7,6 @@
     --FooterHeight: 15vh;
     z-index: 2;
     position: fixed;
-    top: 85vh;
     text-align: center;
     top: calc(100vh - var(--FooterHeight));
 }
@@ -20,3 +19,9 @@
     font-size: 1.6rem;
     color: rgb(64, 133, 110);
 }
+
+@media (max-width: 500px) {
+    .Footer {
+       
+    }
+ }

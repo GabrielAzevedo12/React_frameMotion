@@ -20,7 +20,7 @@ color: ${ (props) => props.color || "rgb(38, 54, 54)" } ;
        font-size: 1rem;
 }
 @media (max-width: 280px) {
-    font-size: 0.8rem;
+    font-size: 1rem;
 }`
 
 const Text = ( props ) => { 
