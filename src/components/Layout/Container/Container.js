@@ -18,6 +18,7 @@ const StyledContainer = styled.div`
         flex-direction: column;
         justify-content: stretch;
         align-items: stretch;
+        min-height: 100vh;
      }         
     `
 const Container = ( props ) => {

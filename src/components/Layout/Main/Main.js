@@ -20,10 +20,12 @@ import { flexColumn } from '../../../propsGerais.css';
 
 const StyledMain = styled.main`  
 @media (max-width: 500px) {
-  display: flex;
+  & div#main_div {
+    display: flex;
   flex-direction: column;
   justify-content: stretch;
   align-items: stretch;
+  }
 }            
     `
 function Main() {
@@ -31,6 +33,7 @@ function Main() {
   return (
     <Router>
     <StyledMain>
+    <div id="main_div">
     <Header mobile={true} />
       <Container CustomClass="min-hight-container">
          <Routes>
@@ -41,6 +44,7 @@ function Main() {
          </Routes>
       </Container>
       <Footer />
+    </div>
     </StyledMain>
   </Router>
   );
