@@ -26,8 +26,8 @@ ScrollMain_onScroll = () => {
       Remover_class(Div_Header_Nav, "opacity_from_0_to_100");
       Adicionar_class(Header_Logo, "opacity_from_100_to_0");
       Adicionar_class(Div_Header_Nav, "opacity_from_100_to_0");
-      Adicionar_class(Footer, "Animation_Footer_moverTop_59gFfkGIGd7");
-      Remover_class(Footer, "Animation_Footer_moverTop_ocf0krF3qPr");
+      Adicionar_class(Footer, "opacity_from_0_to_100");
+      Remover_class(Footer, "opacity_from_100_to_0");
     } else {
       //esconder(Footer);
       //exibir(Header);
@@ -41,16 +41,15 @@ ScrollMain_onScroll = () => {
       //exibir([Header_Logo, Div_Header_Nav],true);
       Header_Logo ? Header_Logo.style.display = "" : nothing() ;
       Div_Header_Nav ? Div_Header_Nav.style.display = "" : nothing() ;
-      Remover_class(Footer, "Animation_Footer_moverTop_59gFfkGIGd7");
-      Adicionar_class(Footer, "Animation_Footer_moverTop_ocf0krF3qPr");
+      Remover_class(Footer, "opacity_from_0_to_100");
+      Adicionar_class(Footer, "opacity_from_100_to_0");
     }
     scrollOld = window.scrollY;
   } else {
     Remover_class(Footer, "Animation_Footer_moverTop_ocf0krF3qPr");
-    exibir(Footer);
     Remover_class(Header, "Animation_Header_moverTop_1b5Ab00bxvN");
+    exibir(Footer);
     exibir(Header);
-    Adicionar_class(Header, "Header-height")
   }
   
 };

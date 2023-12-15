@@ -6,7 +6,7 @@ import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa"
 
 function Footer() {
   return (
-    <div className="Footer center flex-column style_template_1 Animation_Footer_moverTop_59gFfkGIGd7">
+    <div className="Footer center flex-column style_template_1 opacity_from_0_to_100">
       <div className="Footer_lista flex-row flex-wrap center">
         <div className="Footer_item">
           <FaFacebook/>
