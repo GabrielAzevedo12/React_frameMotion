@@ -16,6 +16,10 @@ min-height: 10vh;
 width: 100%;
 margin-top: 10px;
 font-size: 1.2rem;
+
+&::placeholder {
+  color: black;
+}
 `
 const StyledMotionSelect = styled(motion.select)`
 background: rgb(63,94,251);
@@ -101,7 +105,7 @@ export default function FormExample(props) {
             scale: 1
         },
         whileHover : {
-            scale: 1.1
+            scale: 1.01
         },
         hidden : { 
             scale: 0.3,
@@ -157,7 +161,8 @@ export default function FormExample(props) {
 
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)} className={`${props.ClassName} flex-column`}>
-      <StyledMotionInput variants={input_props.variants} initial="initial" whileInView="whileView" {...register("firstName")} whileHover="whileHover" />
+      <StyledLabel for="input_date" className="center flex"> Data </StyledLabel>
+      <StyledMotionInput id="input_date" variants={input_props.variants} initial="initial" whileInView="whileView" {...register("firstName")} whileHover="whileHover" placeholder="Dia / Mes / Ano" />
       <StyledLabel for="Select_Caderno" className="center flex"> Cadernos </StyledLabel>
       <StyledMotionSelect id="Select_Caderno" variants={input_props.variants} initial="initial" whileInView="whileView" {...register("gender")} whileHover="whileHover">
         <StyledMotionOption value="female">female</StyledMotionOption>
