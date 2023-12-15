@@ -11,9 +11,15 @@
     z-index: 2;
     --heightHeader: 10vh;
     top: 0;
+    left: -0.5px;
 }
 #Header_Logo {
     min-width: 10vw;
     height: 100%;
     text-align: center;
 }
+.Header-height {
+    min-height: var(--heightHeader);
+}
+@media (max-width: 500px) {
+  }

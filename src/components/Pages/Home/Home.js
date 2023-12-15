@@ -15,6 +15,7 @@ ScrollMain_onScroll = () => {
   Div_Header_Nav = $("#Div_Header_Nav");
 
   if ( Existe_Class( $(".Container_Layout_Default").childNodes[0], "Home_Container" ) ) {
+    Remover_class(Header, "Header-height")
     if (scrollOld >= window.scrollY) {
       //esconder(Header);
       //exibir(Footer); 
@@ -49,6 +50,7 @@ ScrollMain_onScroll = () => {
     exibir(Footer);
     Remover_class(Header, "Animation_Header_moverTop_1b5Ab00bxvN");
     exibir(Header);
+    Adicionar_class(Header, "Header-height")
   }
   
 };

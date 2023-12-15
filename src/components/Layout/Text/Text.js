@@ -18,6 +18,9 @@ font-size:  ${ (props) => props.fontSize || "1.2rem" } ;
 color: ${ (props) => props.color || "rgb(38, 54, 54)" } ;
 @media (max-width: 500px) {
        font-size: 1rem;
+}
+@media (max-width: 280px) {
+    font-size: 0.8rem;
 }`
 
 const Text = ( props ) => { 

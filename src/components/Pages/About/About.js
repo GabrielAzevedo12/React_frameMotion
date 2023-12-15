@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 //import FakeText from "../../FakeText/FakeText";
 import { useNavigate } from "react-router-dom";
 import FlexColumn from "../../../flexColumn.css";
@@ -6,6 +6,7 @@ import ButtonDinamico from "../../Layout/ButtonDinamico/ButtonDinamico";
 import styled from "styled-components";
 import Text from "../../Layout/Text/Text";
 import FlexRow from "../../../flexRow.css";
+import { Adicionar_class } from "../../funçoes/funçoes";
 
 //<Redirect to="/" />
 /*
@@ -25,7 +26,7 @@ const StyledAbout = styled.div`
       }
     
     & div.rotasSobre {
-        min-width: 50vh;
+        min-width: 50vw;
         }
 
 @media (max-width: 500px) {
@@ -34,8 +35,12 @@ const StyledAbout = styled.div`
       } 
 }
     `
+
 const About = ({ name }) => {
     const navigate = useNavigate();
+    useEffect(() => {
+      Adicionar_class(document.querySelector(".Header"), "Header-height") ;
+    }, []);
 
     return (
       <StyledAbout>

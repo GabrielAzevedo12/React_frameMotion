@@ -86,7 +86,7 @@ function Header(props) {
     <div 
     id="Header" 
     className={props.mobile ? 
-    `center fixed space-between Header flex-row Animation_Header_AlterarDimensoes}` :
+    `center fixed space-between Header flex-row Animation_Header_moverTop_c3Bp26yyxUn}` :
     `${props.className} Header flex-row Animation_Header_AlterarDimensoes`}
     onMouseOver={Header_onMouseOver} >
       {mobile ?

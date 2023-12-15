@@ -26,7 +26,11 @@ function ButtonDinamico( props ) {
       font-weight: 600;
       z-index:10;
 
-    }`
+    }
+    
+    @media (max-width: 500px) {
+      font-size: 1rem;
+}`
 
   return (
     <ButtonDinamico 

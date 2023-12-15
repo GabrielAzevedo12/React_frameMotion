@@ -1,14 +1,15 @@
-import React from "react";
+import React, {useEffect} from "react";
 //import FakeText from "../../FakeText/FakeText";
 import { useNavigate } from 'react-router-dom';
 import './css/Contact.css'
 import styled from "styled-components";
 import FlexColumn from "../../../flexColumn.css";
 import Text from "../../Layout/Text/Text";
-import { flexRow } from "../../../propsGerais.css.js";
+import { flexColumn, flexRow } from "../../../propsGerais.css.js";
 import ButtonDinamico from "../../Layout/ButtonDinamico/ButtonDinamico.js";
 import FlexRow from "../../../flexRow.css.js";
 import { Link } from "react-router-dom";
+import { Adicionar_class } from "../../funçoes/funçoes.js";
 
 const StyledContact = styled.div`
     & h1 {
@@ -31,6 +32,11 @@ const StyledContact = styled.div`
         & h1 {
                font-size: 4rem;
            } 
+     }  
+     @media (max-width: 280px) {
+        & h1 {
+               font-size: 3rem;
+           } 
      }        
     `
     const Email = styled.div`
@@ -39,6 +45,11 @@ const StyledContact = styled.div`
     & p {
         padding-right: 10px;
     }
+    @media (max-width: 500px) {
+        & {
+            ${flexColumn}
+        }
+     }
     `
     const Endereço = styled.div`
     ${flexRow}
@@ -46,10 +57,18 @@ const StyledContact = styled.div`
     & p {
         padding-right: 10px;
     }
+    @media (max-width: 500px) {
+        & {
+            ${flexColumn}
+        }
+     }
     `
 
 const Contact = () => {
     const navigate = useNavigate();
+    useEffect(() => {
+        Adicionar_class(document.querySelector(".Header"), "Header-height") ;
+      }, []);
 
     return (
         <StyledContact>
