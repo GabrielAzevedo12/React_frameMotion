@@ -21,7 +21,7 @@ const StyledHeader = styled(motion.div)`
     z-index: 2;
     --heightHeader: 10vh;
     top: 0;
-    left: -0.5px;
+    left: 0px;
 `
 
 function Header(props) {

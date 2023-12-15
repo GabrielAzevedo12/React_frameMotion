@@ -25,10 +25,13 @@ ScrollMain_onScroll = () => {
       Adicionar_class(Header_Logo, "opacity_from_100_to_0");
       Adicionar_class(Div_Header_Nav, "opacity_from_100_to_0");
       //animation footer
-      /*
-      Adicionar_class(Footer, "opacity_from_0_to_100");
-      Remover_class(Footer, "opacity_from_100_to_0");
-      */
+      if ( window.outerWidth >= 500 ) {
+        Adicionar_class(Footer, "opacity_from_0_to_100");
+        Remover_class(Footer, "opacity_from_100_to_0");
+      } else {
+
+      }
+
     } else {
       //animation header
       Remover_class(Header, "Animation_Header_moverTop_1b5Ab00bxvN");
@@ -40,10 +43,12 @@ ScrollMain_onScroll = () => {
       Header_Logo ? Header_Logo.style.display = "" : nothing() ;
       Div_Header_Nav ? Div_Header_Nav.style.display = "" : nothing() ;
       //animation footer
-      /*
-      Remover_class(Footer, "opacity_from_0_to_100");
-      Adicionar_class(Footer, "opacity_from_100_to_0");
-      */
+      if ( window.outerWidth >= 500 ) {
+        Remover_class(Footer, "opacity_from_0_to_100");
+        Adicionar_class(Footer, "opacity_from_100_to_0");
+      } else {
+
+      }
     }
     scrollOld = window.scrollY;
   } else {
