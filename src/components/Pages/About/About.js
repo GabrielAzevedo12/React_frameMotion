@@ -40,6 +40,7 @@ const About = ({ name }) => {
     const navigate = useNavigate();
     useEffect(() => {
       Adicionar_class(document.querySelector(".Header"), "Header-height") ;
+      Adicionar_class(document.querySelector(".Footer"), "opacity_from_0_to_100") ;
     }, []);
 
     return (

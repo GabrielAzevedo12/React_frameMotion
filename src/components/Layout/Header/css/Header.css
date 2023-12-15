@@ -1,17 +1,14 @@
 .Header {
+    /*
     grid-area: Header;
     max-width: 100vw;
     min-width: 100vw;
-    /*
-    max-height: 10vh;
-    min-height: 10vh;
-    height: 10vh;
-    */
     background: linear-gradient(rgb(8, 19, 29) 70%, transparent);
     z-index: 2;
     --heightHeader: 10vh;
     top: 0;
     left: -0.5px;
+    */
 }
 #Header_Logo {
     min-width: 10vw;

@@ -10,7 +10,7 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import { $ } from '../../funçoes/funçoes'
 import { BrowserRouter as Router, Route, Link, Routes, redirect as Redirect } from "react-router-dom";
-import React from "react";
+import React, {useState} from "react";
 import Home from '../../Pages/Home/Home';
 import Contact from '../../Pages/Contact/Contact';
 import About from '../../Pages/About/About';
@@ -29,21 +29,24 @@ const StyledMain = styled.main`
 }            
     `
 function Main() {
+  const 
+  [animation_header, setAnimation_header] =  useState(false),
+  [animation_footer, setAnimation_Footer] = useState(false);
   const name = "Teste"
   return (
     <Router>
     <StyledMain>
     <div id="main_div">
-    <Header mobile={true} />
+    <Header mobile={true} animation_header={animation_header}/>
       <Container CustomClass="min-hight-container">
          <Routes>
-           <Route path="/" exact element={<Home/>} />
+           <Route path="/" exact element={<Home setAnimation_header={setAnimation_header} setAnimation_Footer={setAnimation_Footer}/>} />
            <Route path="/about"  element={<About name={name}/>} />
            <Route path="/contact"  element={<Contact/>} />
            <Route render={() => <h1>404: page not found</h1>} />
          </Routes>
       </Container>
-      <Footer />
+      <Footer animation_footer={animation_footer}/>
     </div>
     </StyledMain>
   </Router>

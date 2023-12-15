@@ -11,6 +11,18 @@ import './css/Animation_Header_AlterarDimensoes.css'
 import { $, Adicionar_class, Existe_Class, Remover_class } from '../../funçoes/funçoes';
 import { ButtonDinamico_Nav_rotate0deg } from '../ButtonDinamico/css/Animation_ButtonDinamico_Nav_moverLeft_gM70YiCU9x4.css.js';
 import { ButtonDinamico_Nav_rotate180deg } from '../ButtonDinamico/css/Animation_ButtonDinamico_Nav_moverLeft_d98V0w.css.js';
+import { motion } from 'framer-motion';
+
+const StyledHeader = styled(motion.div)`
+    grid-area: Header;
+    max-width: 100vw;
+    min-width: 100vw;
+    background: linear-gradient(rgb(8, 19, 29) 70%, transparent);
+    z-index: 2;
+    --heightHeader: 10vh;
+    top: 0;
+    left: -0.5px;
+`
 
 function Header(props) {
   const [boolean, setBoolean] = useState(false);
@@ -18,36 +30,56 @@ function Header(props) {
   const [mobile, setMobile] = useState(props.mobile || false);
 
   const ButtonDinamico_onClick = (e) => {
-    //$("#Header_Nav").style.display === "none"
     if ( boolean === false ) {
       setBoolean(true) ;
       setRotate180(true);
-/*
-      Adicionar_class($("#ButtonDinamico_Nav_left"), "Animation_ButtonDinamico_Nav_moverLeft_d98V0w");
-      Remover_class($("#ButtonDinamico_Nav_left"), "Animation_ButtonDinamico_Nav_moverLeft_gM70YiCU9x4");
-      console.log(1)
-*/
     } else {
       setBoolean(false) ;
       setRotate180(false)
-      /*
-      Remover_class($("#ButtonDinamico_Nav_left"), "Animation_ButtonDinamico_Nav_moverLeft_d98V0w");
-      Adicionar_class($("#ButtonDinamico_Nav_left"), "Animation_ButtonDinamico_Nav_moverLeft_gM70YiCU9x4");
-      console.log(2)
-      */
     }
 
   },
-  Header_onMouseOver = (e) => {
-    if ( Existe_Class( $("#Header") , "Animation_Header_moverTop_c3Bp26yyxUn" ) ) {
-
-      Remover_class($("#Header"), "Animation_Header_moverTop_c3Bp26yyxUn" );
-      Adicionar_class($("#Header"), "Animation_Header_AlterarDimensoes");
-
-    }  },
-  Header_OnMouseOut = (e) => {
-   
-  };
+  Header_props = {
+    variants : {
+        initial : {
+            x: 0,
+            y: 0,
+            opacity: 0,
+            scale: 0
+        },
+        whileView : {
+            x: 0,
+            y: 0,
+            opacity: 1,
+            scale: 1
+        },
+        whileHover : {
+            scale: 1.1
+        },
+        hidden : { 
+          x: 0,
+          y: 0,
+          opacity: 0,
+          scale: 0
+        },
+        visible : { 
+          x: 0,
+          y: 0,
+          opacity: 1,
+          scale: 1
+         }
+    },
+  styles : {
+  },
+  events: {
+    mouseover: (e) => {
+      if ( Existe_Class( $("#Header") , "Animation_Header_moverTop_c3Bp26yyxUn" ) ) {
+        Remover_class($("#Header"), "Animation_Header_moverTop_c3Bp26yyxUn" );
+        Adicionar_class($("#Header"), "Animation_Header_AlterarDimensoes");
+      }
+    },
+    mouseout: () => {}
+}}
 
   const StyledBsChevronDoubleLeft = styled(BsChevronDoubleLeft)`
   position: relative;
@@ -83,17 +115,21 @@ function Header(props) {
 
   return (
     <>
-    <div 
+    <StyledHeader 
     id="Header" 
     className={props.mobile ? 
     `center fixed space-between Header flex-row Animation_Header_moverTop_c3Bp26yyxUn}` :
     `${props.className} Header flex-row Animation_Header_AlterarDimensoes`}
-    onMouseOver={Header_onMouseOver} >
+    onMouseOver={Header_props.events.mouseover}
+    variants={Header_props.variants}
+    initial="hidden"
+    whileInView="whileView" 
+    whileHover="whileHover" >
       {mobile ?
       trueMobile() :
       NotMobile()
       }
-    </div>
+    </StyledHeader>
     </>
   );
 }
