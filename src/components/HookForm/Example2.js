@@ -157,6 +157,42 @@ export default function FormExample(props) {
        }
     },
   styles : {
+  }},
+  options_props = {
+    variants : {
+        initial : {
+            x: 0,
+            y: -20,
+            borderRadius: 0,
+            /*  opacity: animateMotionTesteDivDisplay === true ? 1 : 0.7,*/
+            opacity: 0.5,
+            scale: 0
+        },
+        whileView : {
+            x: 0,
+            y: 0,
+            borderRadius: 30,
+            /*  opacity: animateMotionTesteDivDisplay === true ? 1 : 0.7,*/
+            opacity: 1,
+            scale: 1
+        },
+        whileHover : {
+            scale: 1.1
+        },
+      hidden : { 
+        scale: 0.3,
+        y: -140,
+        x: 0,
+        opacity: 0.2
+       },
+      visible : { 
+        scale: 1,
+        y: 0,
+        x: 0,
+        opacity: 1
+       }
+    },
+  styles : {
   }};
 
   return (
