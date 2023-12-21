@@ -4,6 +4,8 @@ import './css/Home.css';
 import { esconder, exibir, Existe_Class, $, Adicionar_class, Remover_class, nothing } from "../../funçoes/funçoes";
 import Banner from "../../Layout/Banner/Banner";
 import FormExample from "../../HookForm/Example2";
+import { FramerMotion5 } from "../../frame_motion/framer_motion5";
+import FramerMotion from "../../frame_motion/framer_motion";
 
 var scrollOld = 0;
 const
