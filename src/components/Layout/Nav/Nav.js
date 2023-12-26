@@ -5,7 +5,6 @@ import { genKey } from '../../funçoes/genRandomKey';
 //import "../../../../node_modules/magic.css/dist/magic.css"
 //import "../../../../node_modules/magic.css/dist/magic.min.css"
 
-
 function Nav(props) {
   const url = "/about/" + props.name;
   return (
